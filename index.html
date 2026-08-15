@@ -7,7 +7,6 @@
 -->
 <html lang="en">
 <head>
-    <base href="./">
     <link rel="manifest" href="manifest.json">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -702,14 +701,14 @@ html[data-theme-style="brass"] body.theme-engine-ready .card,
 html[data-theme-style="brass"] body.theme-engine-ready .theme-gallery-card {
   box-shadow: var(--theme-surface-shadow), inset 0 1px 0 rgba(255,255,255,.035);
 }
-body.theme-engine-ready[data-theme="haunted-hotel"] .theme-gallery-card.active {
+html[data-theme="haunted-hotel"] body.theme-engine-ready .theme-gallery-card.active {
   background-image: linear-gradient(rgba(30,18,12,.68),rgba(30,18,12,.82)), url('assets/haunted-hotel/bg-hallway.jpg');
   background-size: cover;
 }
-body.theme-engine-ready[data-theme="haunted-hotel"] .screen.active .card {
+html[data-theme="haunted-hotel"] body.theme-engine-ready .screen.active .card {
   border-color: #c9a24b;
 }
-body.theme-engine-ready[data-theme="haunted-hotel"] .nav-btn.active {
+html[data-theme="haunted-hotel"] body.theme-engine-ready .nav-btn.active {
   text-shadow: 0 0 10px rgba(201,162,75,.55);
 }
 
@@ -1064,6 +1063,35 @@ body.theme-engine-ready.theme-fx-wobble .theme-gallery-card:nth-child(2n){animat
   body.theme-engine-ready *,body.theme-engine-ready *::before,body.theme-engine-ready *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
 }
 
+</style>
+
+<style id="theme-scope-fix">
+/* Theme selector scope fix: data-theme is stored on <html>. */
+html[data-theme] body.theme-engine-ready {
+  background-color: var(--void) !important;
+  color: var(--bone) !important;
+}
+html[data-theme] body.theme-engine-ready #app,
+html[data-theme] body.theme-engine-ready .screen.active {
+  background-color: var(--void);
+}
+html[data-theme] body.theme-engine-ready .card,
+html[data-theme] body.theme-engine-ready .modal-box,
+html[data-theme] body.theme-engine-ready .dash-summary,
+html[data-theme] body.theme-engine-ready .dash-section-hdr {
+  background-color: var(--panel);
+  border-color: var(--panel-edge);
+  color: var(--bone);
+}
+html[data-theme] body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon) {
+  border-color: var(--panel-edge);
+  color: var(--bone);
+}
+html[data-theme] body.theme-engine-ready .nav-btn.active,
+html[data-theme] body.theme-engine-ready .theme-gallery-card.active {
+  border-color: var(--theme-accent);
+  color: var(--theme-accent);
+}
 </style>
 </head>
 <body>
