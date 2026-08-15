@@ -2811,6 +2811,36 @@ function applyTheme(id){
   ALL_BTN_CLASSES.forEach(function(c){ document.body.classList.remove(c); });
   if(preset.btnClass) document.body.classList.add(preset.btnClass);
 
+  // Hard-apply the active theme to the live DOM as well as CSS variables.
+  // This keeps theme switching reliable on mobile browsers and when older CSS is cached.
+  document.body.setAttribute("data-active-theme", preset.id);
+  document.body.style.setProperty("background-color", preset.full ? preset.full.void : (preset.color || "#050506"), "important");
+  document.body.style.setProperty("color", preset.full ? preset.full.bone : "var(--bone)", "important");
+  var appEl = $("app");
+  if(appEl){ appEl.style.setProperty("background-color", preset.full ? preset.full.void : "var(--void)", "important"); }
+  if(preset.id === "haunted-hotel") {
+    var hotelScreens = {
+      dashboard: "assets/haunted-hotel/bg-emf.jpg",
+      spiritbox: "assets/haunted-hotel/bg-spiritbox.jpg",
+      radar: "assets/haunted-hotel/bg-radar.jpg",
+      graveyard: "assets/haunted-hotel/bg-cemetery.jpg",
+      camera: "assets/haunted-hotel/bg-hallway.jpg",
+      evp: "assets/haunted-hotel/bg-hallway.jpg",
+      stories: "assets/haunted-hotel/bg-hallway.jpg",
+      timeline: "assets/haunted-hotel/bg-hallway.jpg",
+      zodiac: "assets/haunted-hotel/bg-hallway.jpg"
+    };
+    Object.keys(hotelScreens).forEach(function(id){
+      var screen = $(id);
+      if(screen){
+        screen.style.backgroundImage = "linear-gradient(rgba(10,6,3,.64),rgba(10,6,3,.86)), url('"+hotelScreens[id]+"')";
+        screen.style.backgroundSize = "cover";
+        screen.style.backgroundPosition = "center top";
+        screen.style.backgroundRepeat = "no-repeat";
+      }
+    });
+  }
+
   applyNavIcons(preset.id);
   applyBootText(preset.id);
 
