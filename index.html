@@ -652,66 +652,6 @@ svg.gauge{width:230px; height:120px;}
 .nav-btn.active{color:var(--green);}
 .nav-btn.active .ic{filter:none; text-shadow:0 0 8px rgba(62,242,122,.6);}
 /* --- Per-theme button restyling --- */
-
-/* Data-driven theme grammar: shared components inherit the selected theme. */
-body.theme-engine-ready {
-  font-family: var(--theme-font-body);
-}
-body.theme-engine-ready .hdr-center.title,
-body.theme-engine-ready .session-log-hdr,
-body.theme-engine-ready .theme-gallery-cathdr {
-  font-family: var(--theme-font-display);
-}
-body.theme-engine-ready code,
-body.theme-engine-ready pre,
-body.theme-engine-ready .mono,
-body.theme-engine-ready input[type="text"],
-body.theme-engine-ready textarea {
-  font-family: var(--theme-font-mono);
-}
-body.theme-engine-ready .screen.active {
-  background-image: var(--theme-surface-overlay), var(--theme-surface-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-body.theme-engine-ready .card,
-body.theme-engine-ready .theme-gallery-card,
-body.theme-engine-ready .cf-item,
-body.theme-engine-ready .stats-grid>div,
-body.theme-engine-ready .badge,
-body.theme-engine-ready .modal-box {
-  border-width: var(--theme-border-width);
-  box-shadow: var(--theme-surface-shadow);
-  padding: var(--theme-panel-padding);
-}
-body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon) {
-  border-radius: var(--theme-button-radius);
-}
-html[data-theme-style="brass"] body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon) {
-  border-color: var(--theme-accent);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
-  letter-spacing: .02em;
-}
-html[data-theme-style="brass"] body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon):active {
-  transform: scale(var(--theme-button-press-scale));
-  box-shadow: var(--theme-button-glow);
-}
-html[data-theme-style="brass"] body.theme-engine-ready .card,
-html[data-theme-style="brass"] body.theme-engine-ready .theme-gallery-card {
-  box-shadow: var(--theme-surface-shadow), inset 0 1px 0 rgba(255,255,255,.035);
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .theme-gallery-card.active {
-  background-image: linear-gradient(rgba(30,18,12,.68),rgba(30,18,12,.82)), url('assets/haunted-hotel/bg-hallway.jpg');
-  background-size: cover;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .screen.active .card {
-  border-color: #c9a24b;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .nav-btn.active {
-  text-shadow: 0 0 10px rgba(201,162,75,.55);
-}
-
 /* Haunted Hotel: ornate bevelled brass look, warm gold glow on press */
 body.btn-haunted-hotel button{border-radius:8px !important; border:1px solid #c9a24b !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.08) !important; transition:box-shadow .15s, transform .1s;}
 body.btn-haunted-hotel button:active{box-shadow:0 0 10px rgba(201,162,75,.55) !important; transform:scale(0.98);}
@@ -946,242 +886,104 @@ body.font-handwritten, body.font-handwritten *{font-family:'Segoe Script','Bradl
 /* Bold text option -- applies on top of whichever family is active */
 body.font-bold, body.font-bold *{font-weight:bold !important;}
 
-body.theme-engine-ready.theme-changing{filter:saturate(1.08);}
-/* ================================================================
-   ECHOES OF THE PAST — GLOBAL THEME ENGINE
-   Themes are data-driven: the selected preset controls the entire UI.
-   ================================================================ */
-:root{
-  --theme-accent: var(--green);
-  --theme-glow: color-mix(in srgb, var(--theme-accent) 55%, transparent);
-  --theme-radius: 10px;
-  --theme-border-style: solid;
-  --theme-filter: none;
-  --theme-bg-pattern: none;
-  --theme-font-body: inherit;
-  --theme-font-display: inherit;
-  --theme-font-mono: monospace;
-  --theme-border-width: 1px;
-  --theme-panel-padding: 12px;
-  --theme-surface-image: none;
-  --theme-surface-overlay: none;
-  --theme-surface-shadow: none;
-  --theme-button-style: default;
-  --theme-button-radius: var(--theme-radius);
-  --theme-button-press-scale: .98;
-  --theme-button-glow: none;
+/* =========================================================
+   HAUNTED HOTEL — FULL APP SKIN
+   Uses the supplied photographic device/background assets so
+   the selected theme reads as a different application, not
+   merely a recolored version of the original UI.
+   ========================================================= */
+body.btn-haunted-hotel{
+  --hotel-bg:#100906; --hotel-panel:rgba(30,17,10,.78); --hotel-gold:#d5ae5b;
+  --hotel-cream:#f1dfb0; --hotel-green:#69ff9a;
+  background:#080403 !important;
+  color:var(--hotel-cream) !important;
+  font-family:Georgia,'Times New Roman',serif !important;
 }
-body.theme-engine-ready{transition:background-color .28s ease,color .28s ease;}
-body.theme-engine-ready .screen,
-body.theme-engine-ready .card,
-body.theme-engine-ready .theme-gallery-card,
-body.theme-engine-ready .cf-item,
-body.theme-engine-ready .stats-grid>div,
-body.theme-engine-ready .badge,
-body.theme-engine-ready .modal-box,
-body.theme-engine-ready input,
-body.theme-engine-ready textarea,
-body.theme-engine-ready select{
-  transition:background-color .28s ease,border-color .28s ease,box-shadow .28s ease,color .28s ease,border-radius .28s ease;
-}
-body.theme-engine-ready .screen.active::before{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background:var(--theme-bg-pattern);
-  opacity:.16;
-  mix-blend-mode:screen;
-}
-body.theme-engine-ready .screen.active > *{position:relative; z-index:1;}
-body.theme-engine-ready .card,
-body.theme-engine-ready .theme-gallery-card,
-body.theme-engine-ready .cf-item,
-body.theme-engine-ready .stats-grid>div,
-body.theme-engine-ready .badge{
-  border-radius:var(--theme-radius);
-  border-style:var(--theme-border-style);
-}
-body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon){
-  --button-accent:var(--theme-accent);
-}
-body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon):focus-visible{
-  outline:2px solid var(--theme-accent);
-  outline-offset:2px;
-}
-body.theme-engine-ready .hdr-center.title,
-body.theme-engine-ready .session-log-hdr,
-body.theme-engine-ready .lbl{
-  text-shadow:0 0 8px var(--theme-glow);
-}
-body.theme-engine-ready .nav-btn.active{color:var(--theme-accent);}
-body.theme-engine-ready .nav-btn.active .ic{text-shadow:0 0 10px var(--theme-glow);}
-body.theme-engine-ready .theme-gallery-card.active{border-color:var(--theme-accent);box-shadow:0 0 14px var(--theme-glow);}
-body.theme-engine-ready .theme-swatch.active{border-color:var(--bone);box-shadow:0 0 10px var(--theme-glow);}
-body.theme-engine-ready.theme-fx-pulse .screen.active::after{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background:radial-gradient(circle at 50% 35%,var(--theme-glow),transparent 55%);
-  opacity:.12; animation:themePulse 5s ease-in-out infinite;
-}
-body.theme-engine-ready.theme-fx-fog .screen.active::after{
-  content:""; position:fixed; left:-20%; right:-20%; bottom:-10%; height:42%; pointer-events:none; z-index:0;
-  background:radial-gradient(ellipse at center,rgba(255,255,255,.08),transparent 68%);
-  filter:blur(18px); animation:themeFog 18s linear infinite alternate;
-}
-body.theme-engine-ready.theme-fx-scan .screen.active::after{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background:repeating-linear-gradient(to bottom,transparent 0,transparent 3px,rgba(255,255,255,.025) 4px,transparent 5px);
-  animation:themeScan 7s linear infinite;
-}
-body.theme-engine-ready.theme-fx-embers .screen.active::after{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background-image:radial-gradient(circle,rgba(255,180,80,.45) 0 1px,transparent 2px),radial-gradient(circle,rgba(255,80,30,.3) 0 1px,transparent 2px);
-  background-size:130px 180px,190px 240px; animation:themeEmbers 10s linear infinite;
-  opacity:.22;
-}
-body.theme-engine-ready.theme-fx-snow .screen.active::after{
-  content:""; position:fixed; inset:-10%; pointer-events:none; z-index:0;
-  background-image:radial-gradient(circle,rgba(220,250,255,.5) 0 1px,transparent 2px),radial-gradient(circle,rgba(255,255,255,.3) 0 1px,transparent 2px);
-  background-size:100px 120px,170px 190px; animation:themeSnow 12s linear infinite;
-  opacity:.2;
-}
-body.theme-engine-ready.theme-fx-dust .screen.active::after{
-  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background-image:radial-gradient(circle,rgba(255,235,190,.28) 0 1px,transparent 2px);
-  background-size:140px 160px; animation:themeDust 18s linear infinite;
-  opacity:.18;
-}
-body.theme-engine-ready.theme-fx-wobble .card,
-body.theme-engine-ready.theme-fx-wobble .theme-gallery-card{animation:themeWobble 7s ease-in-out infinite;}
-body.theme-engine-ready.theme-fx-wobble .card:nth-child(2n),
-body.theme-engine-ready.theme-fx-wobble .theme-gallery-card:nth-child(2n){animation-delay:-2s;}
-@keyframes themePulse{0%,100%{transform:scale(.98);opacity:.06}50%{transform:scale(1.04);opacity:.16}}
-@keyframes themeFog{from{transform:translateX(-4%)}to{transform:translateX(7%)}}
-@keyframes themeScan{from{transform:translateY(-4%)}to{transform:translateY(4%)}}
-@keyframes themeEmbers{from{transform:translateY(8%)}to{transform:translateY(-10%)}}
-@keyframes themeSnow{from{transform:translateY(-8%)}to{transform:translateY(10%)}}
-@keyframes themeDust{from{transform:translate(-2%,-2%)}to{transform:translate(3%,4%)}}
-@keyframes themeWobble{0%,100%{transform:rotate(0)}50%{transform:rotate(.15deg)}}
-@media (prefers-reduced-motion:reduce){
-  body.theme-engine-ready *,body.theme-engine-ready *::before,body.theme-engine-ready *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
-}
-
-</style>
-
-<style id="theme-scope-fix">
-/* Theme selector scope fix: data-theme is stored on <html>. */
-html[data-theme] body.theme-engine-ready {
-  background-color: var(--void) !important;
-  color: var(--bone) !important;
-}
-html[data-theme] body.theme-engine-ready #app,
-html[data-theme] body.theme-engine-ready .screen.active {
-  background-color: var(--void);
-}
-html[data-theme] body.theme-engine-ready .card,
-html[data-theme] body.theme-engine-ready .modal-box,
-html[data-theme] body.theme-engine-ready .dash-summary,
-html[data-theme] body.theme-engine-ready .dash-section-hdr {
-  background-color: var(--panel);
-  border-color: var(--panel-edge);
-  color: var(--bone);
-}
-html[data-theme] body.theme-engine-ready button:not(.nav-btn):not(.mute-icon):not(.iso-icon) {
-  border-color: var(--panel-edge);
-  color: var(--bone);
-}
-html[data-theme] body.theme-engine-ready .nav-btn.active,
-html[data-theme] body.theme-engine-ready .theme-gallery-card.active {
-  border-color: var(--theme-accent);
-  color: var(--theme-accent);
-}
-</style>
-
-<style id="theme-engine-fix3">
-/* Theme Engine Fix 3: make the selected theme visually govern every screen/tool. */
-html[data-theme="haunted-hotel"] body.theme-engine-ready{
-  --theme-accent:#c9a24b !important;
-  --theme-glow:rgba(201,162,75,.40) !important;
-  --void:#140d0a !important;
-  --panel:#241611 !important;
-  --panel-edge:#3a2416 !important;
-  --bone:#f0e6d2 !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #app{
-  background:#140d0a !important;
-  color:#f0e6d2 !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .screen{
-  background-color:#140d0a !important;
-  color:#f0e6d2 !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .screen.active{
-  background-color:#140d0a !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .card,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .modal-box,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .dash-summary,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .dash-section-hdr,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .range-wrap,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .theme-gallery-card,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .theme-search,
-html[data-theme="haunted-hotel"] body.theme-engine-ready input,
-html[data-theme="haunted-hotel"] body.theme-engine-ready textarea,
-html[data-theme="haunted-hotel"] body.theme-engine-ready select{
-  background-color:#241611 !important;
-  border-color:#3a2416 !important;
-  color:#f0e6d2 !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready button:not(.nav-btn){
-  border-color:#c9a24b !important;
-  color:#f0e6d2 !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .title,
-html[data-theme="haunted-hotel"] body.theme-engine-ready h1,
-html[data-theme="haunted-hotel"] body.theme-engine-ready h2,
-html[data-theme="haunted-hotel"] body.theme-engine-ready h3,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .section-title,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .hdr-center{
-  color:#c9a24b !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .nav-btn{
-  border-color:#c9a24b !important;
-  color:#f0e6d2 !important;
-  background:#140d0a !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .nav-btn.active{
-  color:#c9a24b !important;
-  border-color:#c9a24b !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready #dashboard,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #spiritbox,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #radar,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #graveyard,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #camera,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #evp,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #stories,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #timeline,
-html[data-theme="haunted-hotel"] body.theme-engine-ready #zodiac{
+body.btn-haunted-hotel .screen{
+  background-color:#0b0503 !important;
+  background-repeat:no-repeat !important;
   background-size:cover !important;
   background-position:center top !important;
-  background-repeat:no-repeat !important;
+  position:relative;
+  overflow:auto;
 }
+body.btn-haunted-hotel .screen::before{
+  content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
+  background:linear-gradient(180deg,rgba(4,2,1,.28),rgba(4,2,1,.68));
+  box-shadow:inset 0 0 80px rgba(0,0,0,.75);
+}
+body.btn-haunted-hotel .screen > *{position:relative; z-index:1;}
+body.btn-haunted-hotel .hdr{
+  background:linear-gradient(180deg,rgba(37,21,12,.92),rgba(16,8,4,.78)) !important;
+  border-bottom:2px solid rgba(213,174,91,.72) !important;
+  color:var(--hotel-cream) !important;
+  text-shadow:0 1px 2px #000,0 0 8px rgba(213,174,91,.2);
+  font-family:Georgia,'Times New Roman',serif !important;
+}
+body.btn-haunted-hotel .title,
+body.btn-haunted-hotel .hdr-center.title{color:var(--hotel-gold) !important;letter-spacing:.18em !important;font-family:Georgia,'Times New Roman',serif !important;text-shadow:0 0 12px rgba(213,174,91,.28);}
+body.btn-haunted-hotel .card,
+body.btn-haunted-hotel .panel,
+body.btn-haunted-hotel .sb-slider-box,
+body.btn-haunted-hotel .radar-readout,
+body.btn-haunted-hotel .radar-legend,
+body.btn-haunted-hotel .haunt-comment,
+body.btn-haunted-hotel .help-popover{
+  background:linear-gradient(135deg,rgba(45,25,14,.88),rgba(17,9,5,.82)) !important;
+  border:1px solid rgba(213,174,91,.62) !important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 8px 30px rgba(0,0,0,.45) !important;
+  border-radius:4px !important;
+}
+body.btn-haunted-hotel button,
+body.btn-haunted-hotel .nav-btn{
+  font-family:Georgia,'Times New Roman',serif !important;
+}
+body.btn-haunted-hotel button:not(.nav-btn){
+  background:linear-gradient(180deg,#4a3218,#21140a) !important;
+  color:#f4dfac !important;
+  border:1px solid #d5ae5b !important;
+  box-shadow:inset 0 1px rgba(255,255,255,.15),0 0 0 1px rgba(60,35,10,.6),0 3px 10px rgba(0,0,0,.45) !important;
+}
+body.btn-haunted-hotel button:active{box-shadow:0 0 18px rgba(213,174,91,.55),inset 0 2px 5px rgba(0,0,0,.5) !important;}
+body.btn-haunted-hotel .navbar{
+  background:linear-gradient(180deg,rgba(24,12,7,.95),rgba(7,4,2,.98)) !important;
+  border-top:2px solid rgba(213,174,91,.75) !important;
+}
+body.btn-haunted-hotel .nav-btn{color:#9a8460 !important;border-right:1px solid rgba(213,174,91,.2) !important;}
+body.btn-haunted-hotel .nav-btn.active{color:#f0d58f !important;text-shadow:0 0 12px rgba(213,174,91,.45);}
+body.btn-haunted-hotel input,body.btn-haunted-hotel select,body.btn-haunted-hotel textarea{
+  background:rgba(14,7,4,.82) !important;color:#f0dfb4 !important;border-color:#8f6f37 !important;
+}
+/* Photographic screen skins from the supplied Haunted Hotel assets */
+body.btn-haunted-hotel #dashboard{background-image:url('assets/haunted-hotel/bg-emf.jpg') !important;}
+body.btn-haunted-hotel #spiritbox{background-image:url('assets/haunted-hotel/bg-spiritbox.jpg') !important;}
+body.btn-haunted-hotel #radar{background-image:url('assets/haunted-hotel/bg-radar.jpg') !important;}
+body.btn-haunted-hotel #graveyard{background-image:url('assets/haunted-hotel/bg-cemetery.jpg') !important;}
+body.btn-haunted-hotel #camera,
+body.btn-haunted-hotel #evp,
+body.btn-haunted-hotel #stories,
+body.btn-haunted-hotel #timeline,
+body.btn-haunted-hotel #zodiac{background-image:url('assets/haunted-hotel/bg-hallway.jpg') !important;}
+/* Give the radar a photographic instrument feel: keep its functional live sweep,
+   but let the supplied wood/brass device remain visible behind it. */
+body.btn-haunted-hotel #radarCanvasWrap{background:rgba(4,10,6,.38) !important;border:2px solid rgba(213,174,91,.7) !important;box-shadow:0 0 0 5px rgba(18,9,4,.78),0 0 35px rgba(0,0,0,.65) !important;}
+body.btn-haunted-hotel #radarCanvas{filter:drop-shadow(0 0 3px rgba(104,255,154,.35));}
+body.btn-haunted-hotel .radar-dir-lbl{color:#d9bd79 !important;text-shadow:0 0 5px #000 !important;}
+body.btn-haunted-hotel .gauge-wrap,
+body.btn-haunted-hotel .sb-wrap,
+body.btn-haunted-hotel .cam-wrap,
+body.btn-haunted-hotel .evp-wrap,
+body.btn-haunted-hotel .grave-wrap,
+body.btn-haunted-hotel .story-wrap,
+body.btn-haunted-hotel .timeline-wrap,
+body.btn-haunted-hotel .zodiac-wrap{
+  filter:drop-shadow(0 8px 20px rgba(0,0,0,.38));
+}
+body.btn-haunted-hotel .theme-gallery-card.active{border-color:#d5ae5b !important;box-shadow:0 0 18px rgba(213,174,91,.28) !important;}
+body.btn-haunted-hotel .theme-gallery-card,
+body.btn-haunted-hotel .theme-gallery-cathdr{font-family:Georgia,'Times New Roman',serif !important;}
+
 </style>
-
-
-<style id="theme-engine-fix3-tools">
-html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-dir-lbl,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-stat,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-stat strong,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-legend,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .emf-value,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .evp-status{
-  color:#c9a24b !important;
-}
-html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-wrap,
-html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-canvas-wrap{
-  border-color:#3a2416 !important;
-}
-</style>
-
 </head>
 <body>
 <div id="app">
@@ -2622,87 +2424,6 @@ var THEME_PRESETS=[
   {id:"final-nightmare", label:"The Final Nightmare", icon:"\uD83D\uDC41", tag:"Everything the app has been building toward, all at once", color:"#d43a8a",
     full:{void:"#050505", panel:"#0f0a12", edge:"#241a2c", bone:"#f0ecec"}, btnClass:"btn-final-nightmare", locked:true}
 ];
-
-/* -------------------------------------------------------------------------
-   THEME DESIGN REGISTRY
-   Step 1: the theme object now owns the visual grammar of the application,
-   not only its colours. Additional themes can be filled out using this same
-   contract without changing the UI components.
-   ------------------------------------------------------------------------- */
-var THEME_DESIGNS = {
-  "haunted-hotel": {
-    typography: {
-      body: '"Georgia","Times New Roman",serif',
-      display: '"Cinzel","Georgia","Times New Roman",serif',
-      mono: '"Courier New",monospace'
-    },
-    geometry: {
-      radius: "8px",
-      borderStyle: "solid",
-      borderWidth: "1px",
-      panelPadding: "12px"
-    },
-    surfaces: {
-      texture: "url('assets/haunted-hotel/bg-hallway.jpg')",
-      overlay: "linear-gradient(rgba(10,6,3,.72),rgba(10,6,3,.88))",
-      shadow: "0 12px 30px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.05)"
-    },
-    buttons: {
-      style: "brass",
-      radius: "8px",
-      pressScale: ".98",
-      glow: "0 0 12px rgba(201,162,75,.52)"
-    },
-    effects: {
-      ambient: "dust",
-      intensity: ".18"
-    },
-    icons: {
-      source: "assets",
-      set: "haunted-hotel"
-    },
-    tools: {
-      spiritbox: {
-        background: "url('assets/haunted-hotel/bg-spiritbox.jpg')",
-        icon: "assets/haunted-hotel/icon-spiritbox.png",
-        treatment: "brass-radio"
-      },
-      emf: {
-        background: "url('assets/haunted-hotel/bg-emf.jpg')",
-        treatment: "pressure-gauge"
-      },
-      radar: {
-        background: "url('assets/haunted-hotel/bg-radar.jpg')",
-        icon: "assets/haunted-hotel/icon-radar.png",
-        treatment: "hotel-floorplan"
-      },
-      camera: {
-        background: "url('assets/haunted-hotel/bg-hallway.jpg')",
-        icon: "assets/haunted-hotel/icon-camera.png",
-        treatment: "candlelit-hallway"
-      },
-      evp: {
-        icon: "assets/haunted-hotel/icon-evp.png",
-        treatment: "reel-to-reel"
-      }
-    },
-    loading: {
-      text: "Ringing the front desk..."
-    }
-  }
-};
-
-function getThemeDesign(id){
-  return THEME_DESIGNS[id] || {
-    typography: {body:'inherit',display:'inherit',mono:'monospace'},
-    geometry: {radius:'10px',borderStyle:'solid',borderWidth:'1px',panelPadding:'12px'},
-    surfaces: {texture:'none',overlay:'none',shadow:'0 10px 24px rgba(0,0,0,.25)'},
-    buttons: {style:'default',radius:'10px',pressScale:'.98',glow:'none'},
-    effects: {ambient:'none',intensity:'.12'},
-    tools: {}
-  };
-}
-
 var ALL_BTN_CLASSES = THEME_PRESETS.filter(function(p){ return p.btnClass; }).map(function(p){ return p.btnClass; });
 var currentThemeId="dynamic";
 var DEFAULT_NAV_ICONS={dashboard:"\uD83D\uDC80",spiritbox:"\uD83D\uDCFB",camera:"\uD83D\uDCF8",radar:"\uD83D\uDCE1",evp:"\uD83C\uDFA4",graveyard:"\u26B0",stories:"\uD83D\uDCD6",timeline:"\uD83D\uDD51",zodiac:"\u2647"};
@@ -2777,7 +2498,7 @@ function applyNavIcons(id){
     var btn = document.querySelector('.nav-btn[data-nav="'+key+'"] .ic');
     if(!btn) return;
     if(imageSet && imageSet[key]){
-      btn.innerHTML = '<img src="'+imageSet[key]+'" alt="" style="width:22px; height:22px; object-fit:cover; border-radius:4px; vertical-align:middle;">';
+      btn.innerHTML = '<img src="'+imageSet[key]+'" alt="" style="width:24px; height:24px; object-fit:contain; border-radius:4px; vertical-align:middle; display:block; filter:drop-shadow(0 0 4px rgba(213,174,91,.25));">';
     } else {
       btn.textContent = overrides[key] || DEFAULT_NAV_ICONS[key];
     }
@@ -2814,7 +2535,7 @@ function applyBootText(id){
   var el=$("bootStandbyText"); if(!el) return;
   el.textContent = BOOT_TEXT[id] || "STAND BY...";
 }
-var devThemesUnlocked=true;
+var devThemesUnlocked=false;
 var devTapCount=0, devTapTimer=null;
 appStorage.get("devThemesUnlocked", false).then(function(res){
   devThemesUnlocked = !!(res && res.value==="1");
@@ -2838,134 +2559,57 @@ if($("themeNameLabel")){
 }
 function applyTheme(id){
   var preset = THEME_PRESETS.find(function(p){ return p.id===id; }) || THEME_PRESETS[0];
-  currentThemeId = preset.id;
-  var design = getThemeDesign(preset.id);
-
+  if(preset.locked && !devThemesUnlocked){
+    // Locked/unreleased theme -- preview only, don't actually apply it.
+    // Flip `locked:false` on a theme's entry in THEME_PRESETS whenever
+    // it's ready to sell/release; nothing else needs to change.
+    // (Or, as the developer, tap the theme name label 7x to bypass
+    // every lock on this device only -- see devThemesUnlocked above.)
+    if($("themeNameLabel")){
+      $("themeNameLabel").textContent = "\uD83D\uDD12 "+preset.label+" -- coming soon";
+      $("themeNameLabel").style.color = "var(--amber)";
+    }
+    return;
+  }
+  currentThemeId=id;
+  document.body.dataset.theme = id;
+  document.documentElement.dataset.theme = id;
+  document.querySelectorAll(".screen").forEach(function(el){
+    if(id==="dynamic"){ el.style.removeProperty("--accent"); }
+    else { el.style.setProperty("--accent", preset.color, "important"); }
+  });
   var root = document.documentElement;
-  document.body.classList.add("theme-engine-ready");
-  root.setAttribute("data-theme", preset.id);
-  root.style.setProperty("--theme-accent", preset.color || "var(--green)");
-  root.style.setProperty("--theme-glow", (preset.color || "#2bff6b") + "66");
-
   if(preset.full){
     root.style.setProperty("--void", preset.full.void);
     root.style.setProperty("--panel", preset.full.panel);
     root.style.setProperty("--panel-edge", preset.full.edge);
     root.style.setProperty("--bone", preset.full.bone);
   } else {
+    // Flat accent-only presets (including Dynamic) keep the original
+    // dark palette rather than a themed one.
     root.style.removeProperty("--void");
     root.style.removeProperty("--panel");
     root.style.removeProperty("--panel-edge");
     root.style.removeProperty("--bone");
   }
-
-  // Step 1 theme grammar: typography, geometry, surfaces and button behaviour.
-  root.style.setProperty("--theme-font-body", design.typography.body);
-  root.style.setProperty("--theme-font-display", design.typography.display);
-  root.style.setProperty("--theme-font-mono", design.typography.mono);
-  root.style.setProperty("--theme-radius", design.geometry.radius);
-  root.style.setProperty("--theme-border-style", design.geometry.borderStyle);
-  root.style.setProperty("--theme-border-width", design.geometry.borderWidth);
-  root.style.setProperty("--theme-panel-padding", design.geometry.panelPadding);
-  root.style.setProperty("--theme-surface-image", design.surfaces.texture || "none");
-  root.style.setProperty("--theme-surface-overlay", design.surfaces.overlay || "none");
-  root.style.setProperty("--theme-surface-shadow", design.surfaces.shadow || "none");
-  root.style.setProperty("--theme-button-style", design.buttons.style || "default");
-  root.style.setProperty("--theme-button-radius", design.buttons.radius || design.geometry.radius);
-  root.style.setProperty("--theme-button-press-scale", design.buttons.pressScale || ".98");
-  root.style.setProperty("--theme-button-glow", design.buttons.glow || "none");
-  root.dataset.themeStyle = design.buttons.style || "default";
-  document.body.dataset.themeStyle = design.buttons.style || "default";
-
-  // Theme-wide visual behaviour. Individual button classes below remain available
-  // for the detailed per-theme styling already present in this project.
-  var fx = {
-    "haunted-hotel":"dust", "victorian-manor":"dust", "gothic-cathedral":"dust", "catacombs":"dust",
-    "vampire-castle":"fog", "ghost-ship":"fog", "werewolf-forest":"fog", "black-forest":"fog",
-    "swamp-of-the-dead":"fog", "pirate-curse":"fog", "spider-lair":"wobble",
-    "zombie-laboratory":"scan", "area-51":"scan", "biohazard-facility":"scan", "haunted-prison":"scan",
-    "hells-gate":"embers", "demon-temple":"pulse", "alien-mothership":"pulse", "cosmic-horror":"pulse",
-    "crystal-caverns":"pulse", "arctic-station":"snow", "frozen-horror":"snow",
-    "nightmare-factory":"wobble", "shadow-realm":"pulse", "final-nightmare":"pulse",
-    "witchs-cottage":"dust", "egyptian-tomb":"dust", "medieval-dungeon":"dust", "cursed-mine":"dust",
-    "cursed-carnival":"wobble", "haunted-circus":"wobble", "dark-carnival":"wobble",
-    "apocalypse":"dust", "abandoned-orphanage":"dust", "doll-house":"wobble", "toy-factory":"scan",
-    "snake-temple":"fog", "voodoo-village":"fog", "japanese-temple":"dust", "samurai-curse":"fog",
-    "steampunk-lab":"scan", "phantom-train":"fog", "abandoned-subway":"scan", "sunken-city":"fog",
-    "atlantis-ruins":"pulse", "dragons-crypt":"embers", "haunted-mansion":"dust", "lovecraft-horror":"pulse"
-  };
-  ["dust","fog","scan","embers","snow","wobble","pulse"].forEach(function(name){ document.body.classList.remove("theme-fx-"+name); });
-  if(fx[preset.id]) document.body.classList.add("theme-fx-"+fx[preset.id]);
-
   ALL_BTN_CLASSES.forEach(function(c){ document.body.classList.remove(c); });
   if(preset.btnClass) document.body.classList.add(preset.btnClass);
-
-  // Hard-apply the active theme to the live DOM as well as CSS variables.
-  // This keeps theme switching reliable on mobile browsers and when older CSS is cached.
-  document.body.setAttribute("data-active-theme", preset.id);
-  document.body.style.setProperty("background-color", preset.full ? preset.full.void : (preset.color || "#050506"), "important");
-  document.body.style.setProperty("color", preset.full ? preset.full.bone : "var(--bone)", "important");
-  var appEl = $("app");
-  if(appEl){ appEl.style.setProperty("background-color", preset.full ? preset.full.void : "var(--void)", "important"); }
-  if(preset.id === "haunted-hotel") {
-    var hotelScreens = {
-      dashboard: "assets/haunted-hotel/bg-emf.jpg",
-      spiritbox: "assets/haunted-hotel/bg-spiritbox.jpg",
-      radar: "assets/haunted-hotel/bg-radar.jpg",
-      graveyard: "assets/haunted-hotel/bg-cemetery.jpg",
-      camera: "assets/haunted-hotel/bg-hallway.jpg",
-      evp: "assets/haunted-hotel/bg-hallway.jpg",
-      stories: "assets/haunted-hotel/bg-hallway.jpg",
-      timeline: "assets/haunted-hotel/bg-hallway.jpg",
-      zodiac: "assets/haunted-hotel/bg-hallway.jpg"
-    };
-    Object.keys(hotelScreens).forEach(function(id){
-      var screen = $(id);
-      if(screen){
-        screen.style.backgroundImage = "linear-gradient(rgba(10,6,3,.64),rgba(10,6,3,.86)), url('"+hotelScreens[id]+"')";
-        screen.style.backgroundSize = "cover";
-        screen.style.backgroundPosition = "center top";
-        screen.style.backgroundRepeat = "no-repeat";
-      }
-    });
-  }
-
-  applyNavIcons(preset.id);
-  applyBootText(preset.id);
-
-  // Expose tool treatments to CSS/components without hard-coding a theme into them.
-  root.dataset.themeToolSpiritbox = (design.tools.spiritbox && design.tools.spiritbox.treatment) || "";
-  root.dataset.themeToolEmf = (design.tools.emf && design.tools.emf.treatment) || "";
-  root.dataset.themeToolRadar = (design.tools.radar && design.tools.radar.treatment) || "";
-  root.dataset.themeToolCamera = (design.tools.camera && design.tools.camera.treatment) || "";
-  root.dataset.themeToolEvp = (design.tools.evp && design.tools.evp.treatment) || "";
-
-  // Update the browser/PWA chrome colour as part of the theme.
-  var meta = document.querySelector('meta[name="theme-color"]');
-  if(meta) meta.setAttribute("content", preset.full ? preset.full.void : (preset.color || "#050506"));
-
-  document.querySelectorAll(".theme-swatch").forEach(function(sw){ sw.classList.toggle("active", sw.dataset.theme===preset.id); });
-  document.querySelectorAll(".theme-gallery-card").forEach(function(card){ card.classList.toggle("active", card.dataset.theme===preset.id); });
-  document.querySelectorAll(".theme-swatch,.theme-gallery-card").forEach(function(el){
-    if(el.dataset.theme) el.setAttribute("aria-pressed", el.dataset.theme===preset.id ? "true" : "false");
-  });
-
+  applyNavIcons(id);
+  applyBootText(id);
+  document.querySelectorAll(".theme-swatch").forEach(function(sw){ sw.classList.toggle("active", sw.dataset.theme===id); });
   if($("themeNameLabel")){
     $("themeNameLabel").textContent = preset.label;
     $("themeNameLabel").style.color = "";
   }
-  document.body.classList.add("theme-changing");
-  setTimeout(function(){ document.body.classList.remove("theme-changing"); }, 220);
-  appStorage.set("appTheme", preset.id, false).catch(function(){});
+  appStorage.set("appTheme", id, false).catch(function(){});
 }
-
 function renderThemeSwatches(){
   var row=$("themeSwatchRow"); row.innerHTML="";
   THEME_PRESETS.forEach(function(p){
-    var isLocked = false;
+    var isLocked = p.locked && !devThemesUnlocked;
     var sw=document.createElement("div");
     sw.className="theme-swatch"+(p.id===currentThemeId?" active":"")+(isLocked?" locked":"");
-    sw.dataset.theme=p.id; sw.setAttribute("role","button"); sw.setAttribute("aria-pressed", p.id===currentThemeId ? "true" : "false");
+    sw.dataset.theme=p.id;
     sw.style.background = p.swatch || p.color;
     sw.title = isLocked ? (p.label+" (locked)") : p.label;
     if(isLocked){
@@ -3034,21 +2678,21 @@ function renderThemeGallery(){
     header.textContent=cat.name;
     list.appendChild(header);
     matches.forEach(function(p){
-      var isLocked = false;
+      var isLocked = p.locked && !devThemesUnlocked;
       var card=document.createElement("div");
-      card.className="theme-gallery-card"+(p.id===currentThemeId?" active":"")+(isLocked?" locked":""); card.dataset.theme=p.id;
+      card.className="theme-gallery-card"+(p.id===currentThemeId?" active":"")+(isLocked?" locked":"");
       var swatchStyle = p.swatch || p.color;
       card.innerHTML =
         '<div class="tg-swatch" style="background:'+swatchStyle+';">'+
           (isLocked ? '<span class="theme-lock-badge">\uD83D\uDD12</span>' : '<span class="theme-icon-badge">'+(p.icon||"")+'</span>')+
         '</div>'+
         '<div class="tg-info">'+
-          '<div class="tg-name">'+p.label+'</div>'+
-          '<div class="tg-tag">'+(p.tag||"")+'</div>'+
+          '<div class="tg-name">'+p.label+(isLocked?' <span class="tg-locktag">LOCKED</span>':'')+'</div>'+
+          '<div class="tg-tag">'+(p.tag||"")+(isLocked?' <span style="color:var(--purple);">-- hold to peek</span>':'')+'</div>'+
         '</div>';
       card.addEventListener("click", function(){
         if(previewActive) return; // a hold-preview was just released, don't also treat it as a tap
-        var wasLocked = false;
+        var wasLocked = p.locked && !devThemesUnlocked;
         applyTheme(p.id);
         renderThemeGallery();
         var status=$("themeGalleryStatus");
@@ -5167,29 +4811,12 @@ function recordHotZone(ang,dist){
   }
   radarHotZones.push({ang:gx, dist:gd, count:1});
 }
-
-function themeToolColor(kind){
-  var id=document.documentElement.getAttribute("data-theme");
-  if(id==="haunted-hotel") return "#c9a24b";
-  var v=getComputedStyle(document.documentElement).getPropertyValue("--theme-accent").trim();
-  if(v && v.indexOf("var(")!==0) return v;
-  return "#3ef27a";
-}
-function themeToolRGBA(kind, alpha){
-  var c=themeToolColor(kind);
-  if(c.charAt(0)==="#" && c.length===7){
-    var n=parseInt(c.slice(1),16);
-    return "rgba("+((n>>16)&255)+","+((n>>8)&255)+","+(n&255)+","+alpha+")";
-  }
-  return c;
-}
-
 function radarLoop(){
   if(!radarLoopActive) return;
   var c=$("radarCanvas"), ctx=c.getContext("2d");
   var w=c.width,h=c.height,cx=w/2,cy=h/2,maxR=w/2-8;
   ctx.clearRect(0,0,w,h);
-  ctx.strokeStyle=themeToolRGBA("radar",0.55); ctx.lineWidth=1;
+  ctx.strokeStyle="rgba(62,242,122,0.25)"; ctx.lineWidth=1;
   [0.25,0.5,0.75,1].forEach(function(f){ ctx.beginPath(); ctx.arc(cx,cy,maxR*f,0,Math.PI*2); ctx.stroke(); });
   ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(w,cy); ctx.moveTo(cx,0); ctx.lineTo(cx,h); ctx.stroke();
 
@@ -5316,10 +4943,10 @@ function drawEmfGraph(){
   var c=$("emfGraph"); if(c.width!==c.clientWidth){ c.width=c.clientWidth; c.height=c.clientHeight; }
   var ctx=c.getContext("2d");
   ctx.clearRect(0,0,c.width,c.height);
-  ctx.strokeStyle=themeToolRGBA("emf",0.35); ctx.lineWidth=1;
+  ctx.strokeStyle="rgba(62,242,122,0.15)"; ctx.lineWidth=1;
   for(var i=0;i<4;i++){ var y=c.height*(i/3); ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(c.width,y); ctx.stroke(); }
   if(emfHistory.length>1){
-    ctx.strokeStyle=themeToolColor("emf"); ctx.lineWidth=2; ctx.beginPath();
+    ctx.strokeStyle="#3ef27a"; ctx.lineWidth=2; ctx.beginPath();
     emfHistory.forEach(function(v,i){
       var x=i/(emfHistory.length-1)*c.width;
       var yy=c.height - (v/9)*c.height;
@@ -5420,7 +5047,7 @@ function drawGeoGraph(){
   var c=$("geoGraph"); if(c.width!==c.clientWidth){ c.width=c.clientWidth; c.height=c.clientHeight; }
   var ctx=c.getContext("2d");
   ctx.clearRect(0,0,c.width,c.height);
-  ctx.strokeStyle=themeToolRGBA("emf",0.35); ctx.lineWidth=1;
+  ctx.strokeStyle="rgba(62,242,122,0.15)"; ctx.lineWidth=1;
   for(var i=0;i<4;i++){ var y=c.height*(i/3); ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(c.width,y); ctx.stroke(); }
   if(!geoLive && Math.random()<0.3){ geoHistory.push(Math.random()*0.15); if(geoHistory.length>80) geoHistory.shift(); }
   if(geoHistory.length>1){
@@ -5496,7 +5123,7 @@ function evpDrawIdle(){
   function frame(){
     if(current!=="evp") return;
     ctx.clearRect(0,0,c.width,c.height);
-    ctx.strokeStyle = evpRecording ? "#b83a43" : themeToolColor("evp");
+    ctx.strokeStyle = evpRecording ? "#ff3b47" : "#3ef27a";
     ctx.lineWidth=2; ctx.beginPath();
     if(evpRecording && evpAnalyser){
       var buf = new Uint8Array(evpAnalyser.fftSize);
