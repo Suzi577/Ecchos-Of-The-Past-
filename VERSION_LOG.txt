@@ -313,3 +313,5 @@ v____ -- ____________________
 Theme engine fix: corrected html/body theme scope and bumped service-worker cache to v2 so GitHub Pages receives theme updates.
 
 2026-08-15: Theme engine fix 2 - hard-applies selected theme to live DOM and bumps service-worker cache.
+
+Theme Engine Fix 3 — 2026-08-15: theme colors now propagate into canvas-based tools (Radar/EMF/EVP) and stronger Haunted Hotel screen/surface overrides.

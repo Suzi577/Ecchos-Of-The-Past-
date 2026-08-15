@@ -1093,6 +1093,95 @@ html[data-theme] body.theme-engine-ready .theme-gallery-card.active {
   color: var(--theme-accent);
 }
 </style>
+
+<style id="theme-engine-fix3">
+/* Theme Engine Fix 3: make the selected theme visually govern every screen/tool. */
+html[data-theme="haunted-hotel"] body.theme-engine-ready{
+  --theme-accent:#c9a24b !important;
+  --theme-glow:rgba(201,162,75,.40) !important;
+  --void:#140d0a !important;
+  --panel:#241611 !important;
+  --panel-edge:#3a2416 !important;
+  --bone:#f0e6d2 !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #app{
+  background:#140d0a !important;
+  color:#f0e6d2 !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .screen{
+  background-color:#140d0a !important;
+  color:#f0e6d2 !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .screen.active{
+  background-color:#140d0a !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .card,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .modal-box,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .dash-summary,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .dash-section-hdr,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .range-wrap,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .theme-gallery-card,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .theme-search,
+html[data-theme="haunted-hotel"] body.theme-engine-ready input,
+html[data-theme="haunted-hotel"] body.theme-engine-ready textarea,
+html[data-theme="haunted-hotel"] body.theme-engine-ready select{
+  background-color:#241611 !important;
+  border-color:#3a2416 !important;
+  color:#f0e6d2 !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready button:not(.nav-btn){
+  border-color:#c9a24b !important;
+  color:#f0e6d2 !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .title,
+html[data-theme="haunted-hotel"] body.theme-engine-ready h1,
+html[data-theme="haunted-hotel"] body.theme-engine-ready h2,
+html[data-theme="haunted-hotel"] body.theme-engine-ready h3,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .section-title,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .hdr-center{
+  color:#c9a24b !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .nav-btn{
+  border-color:#c9a24b !important;
+  color:#f0e6d2 !important;
+  background:#140d0a !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .nav-btn.active{
+  color:#c9a24b !important;
+  border-color:#c9a24b !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready #dashboard,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #spiritbox,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #radar,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #graveyard,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #camera,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #evp,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #stories,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #timeline,
+html[data-theme="haunted-hotel"] body.theme-engine-ready #zodiac{
+  background-size:cover !important;
+  background-position:center top !important;
+  background-repeat:no-repeat !important;
+}
+</style>
+
+
+<style id="theme-engine-fix3-tools">
+html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-dir-lbl,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-stat,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-stat strong,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-legend,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .emf-value,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .evp-status{
+  color:#c9a24b !important;
+}
+html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-wrap,
+html[data-theme="haunted-hotel"] body.theme-engine-ready .radar-canvas-wrap{
+  border-color:#3a2416 !important;
+}
+</style>
+
 </head>
 <body>
 <div id="app">
@@ -5078,12 +5167,29 @@ function recordHotZone(ang,dist){
   }
   radarHotZones.push({ang:gx, dist:gd, count:1});
 }
+
+function themeToolColor(kind){
+  var id=document.documentElement.getAttribute("data-theme");
+  if(id==="haunted-hotel") return "#c9a24b";
+  var v=getComputedStyle(document.documentElement).getPropertyValue("--theme-accent").trim();
+  if(v && v.indexOf("var(")!==0) return v;
+  return "#3ef27a";
+}
+function themeToolRGBA(kind, alpha){
+  var c=themeToolColor(kind);
+  if(c.charAt(0)==="#" && c.length===7){
+    var n=parseInt(c.slice(1),16);
+    return "rgba("+((n>>16)&255)+","+((n>>8)&255)+","+(n&255)+","+alpha+")";
+  }
+  return c;
+}
+
 function radarLoop(){
   if(!radarLoopActive) return;
   var c=$("radarCanvas"), ctx=c.getContext("2d");
   var w=c.width,h=c.height,cx=w/2,cy=h/2,maxR=w/2-8;
   ctx.clearRect(0,0,w,h);
-  ctx.strokeStyle="rgba(62,242,122,0.25)"; ctx.lineWidth=1;
+  ctx.strokeStyle=themeToolRGBA("radar",0.55); ctx.lineWidth=1;
   [0.25,0.5,0.75,1].forEach(function(f){ ctx.beginPath(); ctx.arc(cx,cy,maxR*f,0,Math.PI*2); ctx.stroke(); });
   ctx.beginPath(); ctx.moveTo(0,cy); ctx.lineTo(w,cy); ctx.moveTo(cx,0); ctx.lineTo(cx,h); ctx.stroke();
 
@@ -5210,10 +5316,10 @@ function drawEmfGraph(){
   var c=$("emfGraph"); if(c.width!==c.clientWidth){ c.width=c.clientWidth; c.height=c.clientHeight; }
   var ctx=c.getContext("2d");
   ctx.clearRect(0,0,c.width,c.height);
-  ctx.strokeStyle="rgba(62,242,122,0.15)"; ctx.lineWidth=1;
+  ctx.strokeStyle=themeToolRGBA("emf",0.35); ctx.lineWidth=1;
   for(var i=0;i<4;i++){ var y=c.height*(i/3); ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(c.width,y); ctx.stroke(); }
   if(emfHistory.length>1){
-    ctx.strokeStyle="#3ef27a"; ctx.lineWidth=2; ctx.beginPath();
+    ctx.strokeStyle=themeToolColor("emf"); ctx.lineWidth=2; ctx.beginPath();
     emfHistory.forEach(function(v,i){
       var x=i/(emfHistory.length-1)*c.width;
       var yy=c.height - (v/9)*c.height;
@@ -5314,7 +5420,7 @@ function drawGeoGraph(){
   var c=$("geoGraph"); if(c.width!==c.clientWidth){ c.width=c.clientWidth; c.height=c.clientHeight; }
   var ctx=c.getContext("2d");
   ctx.clearRect(0,0,c.width,c.height);
-  ctx.strokeStyle="rgba(62,242,122,0.15)"; ctx.lineWidth=1;
+  ctx.strokeStyle=themeToolRGBA("emf",0.35); ctx.lineWidth=1;
   for(var i=0;i<4;i++){ var y=c.height*(i/3); ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(c.width,y); ctx.stroke(); }
   if(!geoLive && Math.random()<0.3){ geoHistory.push(Math.random()*0.15); if(geoHistory.length>80) geoHistory.shift(); }
   if(geoHistory.length>1){
@@ -5390,7 +5496,7 @@ function evpDrawIdle(){
   function frame(){
     if(current!=="evp") return;
     ctx.clearRect(0,0,c.width,c.height);
-    ctx.strokeStyle = evpRecording ? "#ff3b47" : "#3ef27a";
+    ctx.strokeStyle = evpRecording ? "#b83a43" : themeToolColor("evp");
     ctx.lineWidth=2; ctx.beginPath();
     if(evpRecording && evpAnalyser){
       var buf = new Uint8Array(evpAnalyser.fftSize);
