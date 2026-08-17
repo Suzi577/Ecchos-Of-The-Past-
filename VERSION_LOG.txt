@@ -310,8 +310,15 @@ v____ -- ____________________
 -
 -
 
-Theme engine fix: corrected html/body theme scope and bumped service-worker cache to v2 so GitHub Pages receives theme updates.
 
-2026-08-15: Theme engine fix 2 - hard-applies selected theme to live DOM and bumps service-worker cache.
+==================================
+v3.0.0 -- WORLD THEME UPGRADE
+- Added 50 theme-specific world profiles.
+- Added distinct navigation personalities: bottom, top, left rail, right rail, and floating dock.
+- Added theme-specific instrument treatments for Spirit Box, Radar, EMF, EVP and Camera.
+- Added atmospheric motion families: fog, snow, embers, candle flicker, scanlines, dust and static.
+- Added theme-specific panel geometry: gothic arches, carnival tilt, ice-crystal cuts, stone, rough edges, terminal and rounded worlds.
+- Kept all existing app functionality and local artwork assets.
+- Updated service-worker cache version for GitHub Pages refreshes.
 
-Theme Engine Fix 3 — 2026-08-15: theme colors now propagate into canvas-based tools (Radar/EMF/EVP) and stronger Haunted Hotel screen/surface overrides.
+2026-08-17 — Premium 50-theme upgrade: interactive theme previews, theme-specific instrument identities, animated transitions, accessibility controls, atmospheric audio option, theme-specific world labels, and rare theme easter eggs.

@@ -885,105 +885,200 @@ body.font-serif, body.font-serif *{font-family:Georgia,'Times New Roman',serif !
 body.font-handwritten, body.font-handwritten *{font-family:'Segoe Script','Bradley Hand',cursive !important;}
 /* Bold text option -- applies on top of whichever family is active */
 body.font-bold, body.font-bold *{font-weight:bold !important;}
-
-/* =========================================================
-   HAUNTED HOTEL — FULL APP SKIN
-   Uses the supplied photographic device/background assets so
-   the selected theme reads as a different application, not
-   merely a recolored version of the original UI.
-   ========================================================= */
-body.btn-haunted-hotel{
-  --hotel-bg:#100906; --hotel-panel:rgba(30,17,10,.78); --hotel-gold:#d5ae5b;
-  --hotel-cream:#f1dfb0; --hotel-green:#69ff9a;
-  background:#080403 !important;
-  color:var(--hotel-cream) !important;
-  font-family:Georgia,'Times New Roman',serif !important;
-}
-body.btn-haunted-hotel .screen{
-  background-color:#0b0503 !important;
-  background-repeat:no-repeat !important;
-  background-size:cover !important;
-  background-position:center top !important;
-  position:relative;
-  overflow:auto;
-}
-body.btn-haunted-hotel .screen::before{
-  content:""; position:absolute; inset:0; pointer-events:none; z-index:0;
-  background:linear-gradient(180deg,rgba(4,2,1,.28),rgba(4,2,1,.68));
-  box-shadow:inset 0 0 80px rgba(0,0,0,.75);
-}
-body.btn-haunted-hotel .screen > *{position:relative; z-index:1;}
-body.btn-haunted-hotel .hdr{
-  background:linear-gradient(180deg,rgba(37,21,12,.92),rgba(16,8,4,.78)) !important;
-  border-bottom:2px solid rgba(213,174,91,.72) !important;
-  color:var(--hotel-cream) !important;
-  text-shadow:0 1px 2px #000,0 0 8px rgba(213,174,91,.2);
-  font-family:Georgia,'Times New Roman',serif !important;
-}
-body.btn-haunted-hotel .title,
-body.btn-haunted-hotel .hdr-center.title{color:var(--hotel-gold) !important;letter-spacing:.18em !important;font-family:Georgia,'Times New Roman',serif !important;text-shadow:0 0 12px rgba(213,174,91,.28);}
-body.btn-haunted-hotel .card,
-body.btn-haunted-hotel .panel,
-body.btn-haunted-hotel .sb-slider-box,
-body.btn-haunted-hotel .radar-readout,
-body.btn-haunted-hotel .radar-legend,
-body.btn-haunted-hotel .haunt-comment,
-body.btn-haunted-hotel .help-popover{
-  background:linear-gradient(135deg,rgba(45,25,14,.88),rgba(17,9,5,.82)) !important;
-  border:1px solid rgba(213,174,91,.62) !important;
-  box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 8px 30px rgba(0,0,0,.45) !important;
-  border-radius:4px !important;
-}
-body.btn-haunted-hotel button,
-body.btn-haunted-hotel .nav-btn{
-  font-family:Georgia,'Times New Roman',serif !important;
-}
-body.btn-haunted-hotel button:not(.nav-btn){
-  background:linear-gradient(180deg,#4a3218,#21140a) !important;
-  color:#f4dfac !important;
-  border:1px solid #d5ae5b !important;
-  box-shadow:inset 0 1px rgba(255,255,255,.15),0 0 0 1px rgba(60,35,10,.6),0 3px 10px rgba(0,0,0,.45) !important;
-}
-body.btn-haunted-hotel button:active{box-shadow:0 0 18px rgba(213,174,91,.55),inset 0 2px 5px rgba(0,0,0,.5) !important;}
-body.btn-haunted-hotel .navbar{
-  background:linear-gradient(180deg,rgba(24,12,7,.95),rgba(7,4,2,.98)) !important;
-  border-top:2px solid rgba(213,174,91,.75) !important;
-}
-body.btn-haunted-hotel .nav-btn{color:#9a8460 !important;border-right:1px solid rgba(213,174,91,.2) !important;}
-body.btn-haunted-hotel .nav-btn.active{color:#f0d58f !important;text-shadow:0 0 12px rgba(213,174,91,.45);}
-body.btn-haunted-hotel input,body.btn-haunted-hotel select,body.btn-haunted-hotel textarea{
-  background:rgba(14,7,4,.82) !important;color:#f0dfb4 !important;border-color:#8f6f37 !important;
-}
-/* Photographic screen skins from the supplied Haunted Hotel assets */
-body.btn-haunted-hotel #dashboard{background-image:url('assets/haunted-hotel/bg-emf.jpg') !important;}
-body.btn-haunted-hotel #spiritbox{background-image:url('assets/haunted-hotel/bg-spiritbox.jpg') !important;}
-body.btn-haunted-hotel #radar{background-image:url('assets/haunted-hotel/bg-radar.jpg') !important;}
-body.btn-haunted-hotel #graveyard{background-image:url('assets/haunted-hotel/bg-cemetery.jpg') !important;}
-body.btn-haunted-hotel #camera,
-body.btn-haunted-hotel #evp,
-body.btn-haunted-hotel #stories,
-body.btn-haunted-hotel #timeline,
-body.btn-haunted-hotel #zodiac{background-image:url('assets/haunted-hotel/bg-hallway.jpg') !important;}
-/* Give the radar a photographic instrument feel: keep its functional live sweep,
-   but let the supplied wood/brass device remain visible behind it. */
-body.btn-haunted-hotel #radarCanvasWrap{background:rgba(4,10,6,.38) !important;border:2px solid rgba(213,174,91,.7) !important;box-shadow:0 0 0 5px rgba(18,9,4,.78),0 0 35px rgba(0,0,0,.65) !important;}
-body.btn-haunted-hotel #radarCanvas{filter:drop-shadow(0 0 3px rgba(104,255,154,.35));}
-body.btn-haunted-hotel .radar-dir-lbl{color:#d9bd79 !important;text-shadow:0 0 5px #000 !important;}
-body.btn-haunted-hotel .gauge-wrap,
-body.btn-haunted-hotel .sb-wrap,
-body.btn-haunted-hotel .cam-wrap,
-body.btn-haunted-hotel .evp-wrap,
-body.btn-haunted-hotel .grave-wrap,
-body.btn-haunted-hotel .story-wrap,
-body.btn-haunted-hotel .timeline-wrap,
-body.btn-haunted-hotel .zodiac-wrap{
-  filter:drop-shadow(0 8px 20px rgba(0,0,0,.38));
-}
-body.btn-haunted-hotel .theme-gallery-card.active{border-color:#d5ae5b !important;box-shadow:0 0 18px rgba(213,174,91,.28) !important;}
-body.btn-haunted-hotel .theme-gallery-card,
-body.btn-haunted-hotel .theme-gallery-cathdr{font-family:Georgia,'Times New Roman',serif !important;}
-
 </style>
+
+<style id="full-theme-art-system">
+/* FULL THEME ART ENVIRONMENTS — each named theme is a visual world, not a color swap */
+body.theme-art-active{--theme-art:none;}
+body.theme-art-active .screen{
+  background-image:
+    linear-gradient(rgba(0,0,0,.36),rgba(0,0,0,.58)),
+    var(--theme-art) !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  background-attachment:fixed !important;
+}
+body.theme-art-active #boot{
+  background-image:linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.68)),var(--theme-art) !important;
+  background-size:cover !important;background-position:center !important;
+}
+body.theme-art-active .card,
+body.theme-art-active .dash-summary,
+body.theme-art-active .evp-mini,
+body.theme-art-active .story-note,
+body.theme-art-active .session-log,
+body.theme-art-active .tool-panel,
+body.theme-art-active .theme-gallery-card,
+body.theme-art-active .modal-box{
+  background:linear-gradient(rgba(0,0,0,.24),rgba(0,0,0,.30)),var(--panel) !important;
+  backdrop-filter:blur(3px);
+}
+body.theme-art-active .navbar{
+  background:rgba(5,5,6,.76) !important;
+  backdrop-filter:blur(10px) saturate(1.15);
+  border-top-color:var(--accent) !important;
+}
+body.theme-art-active .hdr{
+  background:linear-gradient(to bottom,rgba(0,0,0,.62),transparent);
+}
+body.theme-art-active .theme-gallery-card .tg-swatch{
+  background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.2)),var(--theme-art) !important;
+  background-size:cover !important;background-position:center !important;
+}
+/* Theme-specific atmosphere */
+body.theme-art-active::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:78;
+  background:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.38) 100%);mix-blend-mode:multiply;}
+body.theme-art-active .screen>*{position:relative;z-index:1;}
+/* Make the art visible even on dense screens */
+body.theme-art-active .gauge-wrap,body.theme-art-active .dash-ticker{background:rgba(0,0,0,.16);border-radius:12px;}
+/* Haunted Hotel keeps the supplied photographic scene pack */
+body.theme-art-haunted-hotel #dashboard{background-image:linear-gradient(rgba(10,6,3,.45),rgba(10,6,3,.70)),url('assets/haunted-hotel/bg-hallway.jpg') !important;background-size:cover !important;background-position:center !important;}
+body.theme-art-haunted-hotel #spiritbox{background-image:linear-gradient(rgba(10,6,3,.45),rgba(10,6,3,.72)),url('assets/haunted-hotel/bg-spiritbox.jpg') !important;background-size:cover !important;background-position:center !important;}
+body.theme-art-haunted-hotel #radar{background-image:linear-gradient(rgba(10,6,3,.42),rgba(10,6,3,.72)),url('assets/haunted-hotel/bg-radar.jpg') !important;background-size:cover !important;background-position:center !important;}
+body.theme-art-haunted-hotel #emf{background-image:linear-gradient(rgba(10,6,3,.42),rgba(10,6,3,.72)),url('assets/haunted-hotel/bg-emf.jpg') !important;background-size:cover !important;background-position:center !important;}
+body.theme-art-haunted-hotel #graveyard{background-image:linear-gradient(rgba(10,6,3,.40),rgba(10,6,3,.72)),url('assets/haunted-hotel/bg-cemetery.jpg') !important;background-size:cover !important;background-position:center !important;}
+body.theme-art-haunted-hotel #camera,body.theme-art-haunted-hotel #evp,body.theme-art-haunted-hotel #stories,body.theme-art-haunted-hotel #timeline,body.theme-art-haunted-hotel #zodiac{background-image:linear-gradient(rgba(10,6,3,.48),rgba(10,6,3,.75)),url('assets/haunted-hotel/bg-hallway.jpg') !important;background-size:cover !important;background-position:center !important;}
+</style>
+
+<style id="theme-world-upgrade">
+/* WORLD-LEVEL THEME UPGRADE: navigation, instruments, typography, textures, motion */
+body.theme-art-active{
+  --world-radius:10px; --world-border:1px; --world-shadow:0 8px 30px rgba(0,0,0,.35);
+  --world-nav-h:76px; --world-texture:none; --world-font:'Courier New',monospace;
+}
+body.theme-art-active .screen{font-family:var(--world-font);}
+body.theme-art-active .hdr{border-bottom:var(--world-border) solid color-mix(in srgb,var(--accent) 42%,transparent);}
+body.theme-art-active .card,body.theme-art-active .tool-panel,body.theme-art-active .freq-panel,body.theme-art-active .term-box,body.theme-art-active .evp-wave,body.theme-art-active .evp-spectro,body.theme-art-active .geo-graph,body.theme-art-active .log-panel{
+  border-radius:var(--world-radius)!important; border-width:var(--world-border)!important; box-shadow:var(--world-shadow); background-image:var(--world-texture),linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.18)),linear-gradient(160deg,var(--panel),rgba(0,0,0,.2))!important;
+}
+body.theme-art-active .navbar{height:var(--world-nav-h); border-radius:var(--world-radius) var(--world-radius) 0 0!important; box-shadow:0 -8px 30px rgba(0,0,0,.3);}
+body.theme-art-active .nav-btn{font-family:var(--world-font)!important; letter-spacing:1px; text-transform:uppercase; transition:transform .15s,filter .15s,background .15s;}
+body.theme-art-active .nav-btn:active{transform:translateY(2px) scale(.97);}
+body.theme-art-active .radar-canvas-wrap{border-radius:var(--world-radius); box-shadow:0 0 0 var(--world-border) color-mix(in srgb,var(--accent) 35%,transparent), inset 0 0 35px rgba(0,0,0,.35);}
+body.theme-art-active .gauge{filter:drop-shadow(0 0 10px color-mix(in srgb,var(--accent) 25%,transparent));}
+body.theme-art-active .cam-screen{border-radius:var(--world-radius); box-shadow:0 0 0 var(--world-border) color-mix(in srgb,var(--accent) 35%,transparent), 0 12px 35px rgba(0,0,0,.4);}
+body.theme-art-active .capture-btn,body.theme-art-active .evp-record-btn,body.theme-art-active .speak-btn{box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 28%,transparent),0 0 25px color-mix(in srgb,var(--accent) 25%,transparent);}
+body.theme-art-active .sb-slider-box input[type=range]{accent-color:var(--accent);}
+body.theme-art-active .screen::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:var(--world-overlay,transparent);}
+body.theme-art-active .screen>*{position:relative;z-index:1;}
+
+/* Navigation personalities */
+body.theme-world-bottom .navbar{display:flex;position:fixed;left:10px;right:10px;bottom:10px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:rgba(5,5,6,.82)!important;}
+body.theme-world-left .navbar{display:flex;position:fixed;left:0;top:0;bottom:0;width:78px;height:auto;flex-direction:column;justify-content:center;border-right:2px solid color-mix(in srgb,var(--accent) 55%,transparent);border-top:0!important;border-radius:0!important;background:rgba(5,5,6,.88)!important;}
+body.theme-world-left .nav-btn{min-height:68px;padding:7px 3px;}
+body.theme-world-left .screen{padding-left:78px;}
+body.theme-world-right .navbar{display:flex;position:fixed;right:0;top:0;bottom:0;width:78px;height:auto;flex-direction:column;justify-content:center;border-left:2px solid color-mix(in srgb,var(--accent) 55%,transparent);border-top:0!important;border-radius:0!important;background:rgba(5,5,6,.88)!important;}
+body.theme-world-right .nav-btn{min-height:68px;padding:7px 3px;}
+body.theme-world-right .screen{padding-right:78px;}
+body.theme-world-top .navbar{display:flex;position:fixed;top:0;left:0;right:0;bottom:auto;height:64px;border-top:0!important;border-bottom:2px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:0!important;background:rgba(5,5,6,.9)!important;z-index:50;}
+body.theme-world-top .screen{padding-top:64px;}
+body.theme-world-floating .navbar{display:flex;position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:calc(100% - 28px);max-width:620px;border:1px solid color-mix(in srgb,var(--accent) 65%,transparent);border-radius:24px!important;background:rgba(4,4,6,.82)!important;backdrop-filter:blur(14px);}
+
+/* Tool identities */
+body.tool-brass .radar-canvas-wrap,body.tool-brass .cam-screen,body.tool-brass .freq-panel,body.tool-brass .evp-wave,body.tool-brass .gauge{filter:sepia(.35) saturate(1.15);}
+body.tool-terminal .term-box,body.tool-terminal .freq-panel,body.tool-terminal .radar-canvas-wrap,body.tool-terminal .cam-screen{font-family:'Courier New',monospace!important;box-shadow:inset 0 0 25px rgba(58,255,184,.08),0 0 18px rgba(58,255,184,.08);}
+body.tool-occult .radar-canvas-wrap,body.tool-occult .gauge,body.tool-occult .evp-wave{filter:hue-rotate(10deg) saturate(1.2);box-shadow:0 0 30px rgba(180,58,255,.16);}
+body.tool-ice .radar-canvas-wrap,body.tool-ice .cam-screen,body.tool-ice .evp-wave{filter:saturate(.8) brightness(1.08);box-shadow:0 0 25px rgba(95,212,255,.2),inset 0 0 25px rgba(238,247,250,.08);}
+body.tool-fire .radar-canvas-wrap,body.tool-fire .cam-screen,body.tool-fire .evp-wave{box-shadow:0 0 25px rgba(255,70,32,.2),inset 0 0 25px rgba(255,70,32,.08);}
+body.tool-wood .card,body.tool-wood .tool-panel,body.tool-wood .term-box{background-image:linear-gradient(90deg,rgba(255,255,255,.02) 50%,rgba(0,0,0,.04) 50%),linear-gradient(160deg,var(--panel),#090b08)!important;background-size:8px 100%,auto!important;}
+
+/* Atmospheric motion */
+body.theme-fog::after{background:radial-gradient(ellipse at 50% 90%,rgba(220,235,235,.08),transparent 55%),linear-gradient(180deg,transparent 60%,rgba(210,230,230,.06));animation:fogDrift 14s ease-in-out infinite alternate!important;}
+body.theme-snow::after{background-image:radial-gradient(circle,rgba(255,255,255,.6) 0 1px,transparent 2px);background-size:17px 17px;opacity:.12;animation:snowMove 12s linear infinite!important;}
+body.theme-embers::after{background-image:radial-gradient(circle,rgba(255,120,40,.75) 0 1px,transparent 2px);background-size:31px 43px;opacity:.14;animation:emberRise 7s linear infinite!important;}
+body.theme-candle::after{background:radial-gradient(ellipse at 50% 35%,rgba(255,190,80,.08),transparent 45%);animation:candleFlicker 2.7s ease-in-out infinite!important;}
+body.theme-scanlines::after{background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 5px);opacity:.55;animation:scanMove 6s linear infinite!important;}
+body.theme-dust::after{background-image:radial-gradient(circle,rgba(230,215,180,.32) 0 1px,transparent 2px);background-size:23px 29px;opacity:.11;animation:dustMove 15s linear infinite!important;}
+body.theme-static::after{background-image:repeating-linear-gradient(0deg,transparent 0 3px,rgba(255,255,255,.018) 4px),repeating-linear-gradient(90deg,rgba(255,255,255,.012) 0 1px,transparent 1px 7px);animation:staticJitter .35s steps(2) infinite!important;}
+@keyframes fogDrift{from{transform:translateX(-2%) scale(1.03)}to{transform:translateX(2%) scale(1.06)}}
+@keyframes snowMove{from{background-position:0 0}to{background-position:45px 120px}}
+@keyframes emberRise{from{background-position:0 100px}to{background-position:20px -80px}}
+@keyframes candleFlicker{0%,100%{opacity:.55}35%{opacity:.8}40%{opacity:.5}70%{opacity:.72}}
+@keyframes scanMove{from{background-position:0 0}to{background-position:0 40px}}
+@keyframes dustMove{from{background-position:0 0}to{background-position:70px -100px}}
+@keyframes staticJitter{0%{transform:translate(0)}50%{transform:translate(1px,-1px)}100%{transform:translate(-1px,1px)}}
+
+/* Theme-specific geometry */
+body.world-gothic .card,body.world-gothic .tool-panel{border-radius:18px 18px 5px 5px!important;}
+body.world-carnival .card,body.world-carnival .tool-panel{transform:rotate(-.35deg);}
+body.world-carnival .card:nth-child(2n){transform:rotate(.45deg);}
+body.world-ice .card,body.world-ice .tool-panel{clip-path:polygon(0 5%,5% 0,95% 0,100% 8%,100% 92%,94% 100%,6% 100%,0 94%);border-radius:0!important;}
+body.world-stone .card,body.world-stone .tool-panel{border-radius:3px!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.04),0 8px 25px rgba(0,0,0,.45)!important;}
+body.world-rough .card,body.world-rough .tool-panel{clip-path:polygon(1% 2%,98% 0,100% 96%,3% 100%,0 8%);border-radius:0!important;}
+body.world-terminal .card,body.world-terminal .tool-panel{border-radius:2px!important;}
+body.world-round .card,body.world-round .tool-panel{border-radius:20px!important;}
+
+/* Splash/boot identity */
+body.theme-art-active #boot .boot-title{font-family:var(--world-font)!important;text-shadow:0 0 16px color-mix(in srgb,var(--accent) 55%,transparent);}
+body.theme-art-active #boot .boot-bars i{background:color-mix(in srgb,var(--accent) 30%,#111);}
+</style>
+<script>
+(function(){
+  var profiles={
+    'haunted-hotel':['theme-world-bottom','tool-brass','theme-candle','world-rough'],
+    'vampire-castle':['theme-world-left','tool-occult','theme-fog','world-gothic'],
+    'witchs-cottage':['theme-world-floating','tool-occult','theme-fog','world-rough'],
+    'cursed-carnival':['theme-world-top','tool-occult','theme-static','world-carnival'],
+    'ghost-ship':['theme-world-bottom','tool-brass','theme-fog','world-rough'],
+    'victorian-manor':['theme-world-left','tool-brass','theme-candle','world-gothic'],
+    'abandoned-asylum':['theme-world-right','tool-terminal','theme-static','world-terminal'],
+    'zombie-laboratory':['theme-world-right','tool-terminal','theme-scanlines','world-terminal'],
+    'egyptian-tomb':['theme-world-top','tool-brass','theme-dust','world-stone'],
+    'werewolf-forest':['theme-world-floating','tool-wood','theme-fog','world-rough'],
+    'hells-gate':['theme-world-bottom','tool-fire','theme-embers','world-rough'],
+    'demon-temple':['theme-world-floating','tool-occult','theme-candle','world-stone'],
+    'gothic-cathedral':['theme-world-left','tool-occult','theme-dust','world-gothic'],
+    'haunted-prison':['theme-world-left','tool-terminal','theme-static','world-stone'],
+    'pirate-curse':['theme-world-bottom','tool-brass','theme-fog','world-rough'],
+    'abandoned-orphanage':['theme-world-right','tool-wood','theme-dust','world-rough'],
+    'doll-house':['theme-world-floating','tool-occult','theme-candle','world-round'],
+    'toy-factory':['theme-world-top','tool-terminal','theme-static','world-terminal'],
+    'medieval-dungeon':['theme-world-left','tool-brass','theme-fog','world-stone'],
+    'area-51':['theme-world-right','tool-terminal','theme-scanlines','world-terminal'],
+    'alien-mothership':['theme-world-floating','tool-terminal','theme-scanlines','world-round'],
+    'arctic-station':['theme-world-top','tool-ice','theme-snow','world-ice'],
+    'biohazard-facility':['theme-world-right','tool-terminal','theme-scanlines','world-terminal'],
+    'apocalypse':['theme-world-bottom','tool-fire','theme-dust','world-rough'],
+    'swamp-of-the-dead':['theme-world-floating','tool-wood','theme-fog','world-rough'],
+    'voodoo-village':['theme-world-bottom','tool-occult','theme-candle','world-rough'],
+    'cursed-mine':['theme-world-left','tool-wood','theme-dust','world-rough'],
+    'catacombs':['theme-world-left','tool-brass','theme-candle','world-stone'],
+    'spider-lair':['theme-world-floating','tool-occult','theme-fog','world-rough'],
+    'snake-temple':['theme-world-top','tool-occult','theme-fog','world-stone'],
+    'haunted-circus':['theme-world-top','tool-occult','theme-static','world-carnival'],
+    'nightmare-factory':['theme-world-right','tool-terminal','theme-static','world-terminal'],
+    'black-forest':['theme-world-floating','tool-wood','theme-fog','world-rough'],
+    'frozen-horror':['theme-world-top','tool-ice','theme-snow','world-ice'],
+    'haunted-lighthouse':['theme-world-right','tool-brass','theme-fog','world-gothic'],
+    'abandoned-subway':['theme-world-left','tool-terminal','theme-static','world-terminal'],
+    'phantom-train':['theme-world-bottom','tool-brass','theme-fog','world-gothic'],
+    'sunken-city':['theme-world-floating','tool-ice','theme-fog','world-round'],
+    'atlantis-ruins':['theme-world-floating','tool-ice','theme-fog','world-round'],
+    'dragons-crypt':['theme-world-left','tool-fire','theme-embers','world-rough'],
+    'samurai-curse':['theme-world-right','tool-brass','theme-fog','world-stone'],
+    'japanese-temple':['theme-world-top','tool-wood','theme-fog','world-stone'],
+    'haunted-mansion':['theme-world-bottom','tool-occult','theme-candle','world-gothic'],
+    'steampunk-lab':['theme-world-left','tool-brass','theme-static','world-terminal'],
+    'lovecraft-horror':['theme-world-floating','tool-occult','theme-static','world-rough'],
+    'shadow-realm':['theme-world-floating','tool-occult','theme-static','world-round'],
+    'crystal-caverns':['theme-world-floating','tool-ice','theme-scanlines','world-ice'],
+    'dark-carnival':['theme-world-top','tool-occult','theme-static','world-carnival'],
+    'cosmic-horror':['theme-world-floating','tool-occult','theme-static','world-round'],
+    'final-nightmare':['theme-world-bottom','tool-fire','theme-embers','world-rough']
+  };
+  var all=['theme-world-bottom','theme-world-left','theme-world-right','theme-world-top','theme-world-floating','tool-brass','tool-terminal','tool-occult','tool-ice','tool-fire','tool-wood','theme-fog','theme-snow','theme-embers','theme-candle','theme-scanlines','theme-dust','theme-static','world-gothic','world-carnival','world-ice','world-stone','world-rough','world-terminal','world-round'];
+  var oldApply=window.applyTheme;
+  window.applyTheme=function(id){
+    oldApply(id);
+    var b=document.body; all.forEach(function(c){b.classList.remove(c);});
+    (profiles[id]||[]).forEach(function(c){b.classList.add(c);});
+    b.dataset.worldTheme=id;
+    var p=(window.THEME_PRESETS||[]).find(function(x){return x.id===id;});
+    if(p){ document.documentElement.style.setProperty('--world-font', p.font || ((id==='gothic-cathedral'||id==='vampire-castle'||id==='victorian-manor')?'Georgia,serif':(id==='area-51'||id==='zombie-laboratory'||id==='biohazard-facility'||id==='abandoned-subway'?'Courier New,monospace':'system-ui,sans-serif'))); }
+  };
+})();
+</script>
+
 </head>
 <body>
 <div id="app">
@@ -2324,105 +2419,105 @@ var THEME_PRESETS=[
   {id:"amber", label:"Amber", icon:"\uD83D\uDFE0", tag:"Classic amber accent throughout", color:"#ffea00"},
   {id:"pink", label:"Pink", icon:"\uD83D\uDC97", tag:"Classic pink accent throughout", color:"#ff2d95"},
   {id:"haunted-hotel", label:"Haunted Hotel", icon:"\uD83D\uDD6F", tag:"Faded Victorian grandeur, candlelit and forgotten", color:"#c9a24b",
-    full:{void:"#140d0a", panel:"#241611", edge:"#3a2416", bone:"#f0e6d2"}, btnClass:"btn-haunted-hotel", locked:true},
+    full:{void:"#140d0a", panel:"#241611", edge:"#3a2416", bone:"#f0e6d2"}, btnClass:"btn-haunted-hotel", locked:false},
   {id:"vampire-castle", label:"Vampire Castle", icon:"\uD83E\uDD87", tag:"Gothic stone halls under a storm-lit sky", color:"#b3123a",
-    full:{void:"#0a0508", panel:"#170a10", edge:"#341019", bone:"#ede2e6"}, btnClass:"btn-vampire-castle", locked:true},
+    full:{void:"#0a0508", panel:"#170a10", edge:"#341019", bone:"#ede2e6"}, btnClass:"btn-vampire-castle", locked:false},
   {id:"witchs-cottage", label:"Witch's Cottage", icon:"\uD83E\uDDD9", tag:"A crooked cottage deep in an old forest", color:"#7ee62c",
-    full:{void:"#0b1207", panel:"#16220f", edge:"#2c3d1c", bone:"#eef2e2"}, btnClass:"btn-witchs-cottage", locked:true},
+    full:{void:"#0b1207", panel:"#16220f", edge:"#2c3d1c", bone:"#eef2e2"}, btnClass:"btn-witchs-cottage", locked:false},
   {id:"cursed-carnival", label:"Cursed Carnival", icon:"\uD83C\uDFAA", tag:"An abandoned fairground, lights flickering on their own", color:"#ff2e4d",
-    full:{void:"#12060a", panel:"#200a10", edge:"#401522", bone:"#f2e6df"}, btnClass:"btn-cursed-carnival", locked:true},
+    full:{void:"#12060a", panel:"#200a10", edge:"#401522", bone:"#f2e6df"}, btnClass:"btn-cursed-carnival", locked:false},
   {id:"ghost-ship", label:"Ghost Ship", icon:"\u2693", tag:"A derelict vessel adrift in endless fog", color:"#2bd9c9",
-    full:{void:"#050a0c", panel:"#0d1a1e", edge:"#1c3238", bone:"#e4f2f0"}, btnClass:"btn-ghost-ship", locked:true},
+    full:{void:"#050a0c", panel:"#0d1a1e", edge:"#1c3238", bone:"#e4f2f0"}, btnClass:"btn-ghost-ship", locked:false},
   {id:"victorian-manor", label:"Victorian Manor", icon:"\uD83D\uDDBC", tag:"A grand family estate with formal, quiet dread", color:"#cba135",
-    full:{void:"#0c0a08", panel:"#1c1712", edge:"#33291d", bone:"#efe8da"}, btnClass:"btn-victorian-manor", locked:true},
+    full:{void:"#0c0a08", panel:"#1c1712", edge:"#33291d", bone:"#efe8da"}, btnClass:"btn-victorian-manor", locked:false},
   {id:"abandoned-asylum", label:"Abandoned Asylum", icon:"\uD83C\uDFE5", tag:"A derelict hospital, cold and institutional", color:"#35e0c0",
-    full:{void:"#0a0d0a", panel:"#141a16", edge:"#26332b", bone:"#e6ece8"}, btnClass:"btn-abandoned-asylum", locked:true},
+    full:{void:"#0a0d0a", panel:"#141a16", edge:"#26332b", bone:"#e6ece8"}, btnClass:"btn-abandoned-asylum", locked:false},
   {id:"zombie-laboratory", label:"Zombie Laboratory", icon:"\u2623", tag:"A containment breach nobody ever cleaned up", color:"#6dff4a",
-    full:{void:"#060a06", panel:"#0e1a10", edge:"#1f3322", bone:"#e2f2e4"}, btnClass:"btn-zombie-laboratory", locked:true},
+    full:{void:"#060a06", panel:"#0e1a10", edge:"#1f3322", bone:"#e2f2e4"}, btnClass:"btn-zombie-laboratory", locked:false},
   {id:"egyptian-tomb", label:"Egyptian Tomb", icon:"\uD83C\uDFFA", tag:"A sealed pharaoh's tomb, undisturbed for millennia", color:"#e8b923",
-    full:{void:"#100b04", panel:"#1e1608", edge:"#3a2a0d", bone:"#f2e7c9"}, btnClass:"btn-egyptian-tomb", locked:true},
+    full:{void:"#100b04", panel:"#1e1608", edge:"#3a2a0d", bone:"#f2e7c9"}, btnClass:"btn-egyptian-tomb", locked:false},
   {id:"werewolf-forest", label:"Werewolf Forest", icon:"\uD83D\uDC3A", tag:"Silver moonlight, and something moving between the trees", color:"#9fd6ff",
-    full:{void:"#070a06", panel:"#101a10", edge:"#223322", bone:"#e8f0ea"}, btnClass:"btn-werewolf-forest", locked:true},
+    full:{void:"#070a06", panel:"#101a10", edge:"#223322", bone:"#e8f0ea"}, btnClass:"btn-werewolf-forest", locked:false},
   {id:"hells-gate", label:"Hell's Gate", icon:"\uD83D\uDD25", tag:"A fissure to somewhere far worse than haunted", color:"#ff4620",
-    full:{void:"#0d0402", panel:"#200704", edge:"#451006", bone:"#f5e6de"}, btnClass:"btn-hells-gate", locked:true},
+    full:{void:"#0d0402", panel:"#200704", edge:"#451006", bone:"#f5e6de"}, btnClass:"btn-hells-gate", locked:false},
   {id:"demon-temple", label:"Demon Temple", icon:"\uD83D\uDC79", tag:"A ritual site older than recorded history", color:"#a83aff",
-    full:{void:"#0a0509", panel:"#180a14", edge:"#33122b", bone:"#efe4f0"}, btnClass:"btn-demon-temple", locked:true},
+    full:{void:"#0a0509", panel:"#180a14", edge:"#33122b", bone:"#efe4f0"}, btnClass:"btn-demon-temple", locked:false},
   {id:"gothic-cathedral", label:"Gothic Cathedral", icon:"\u26EA", tag:"A vast empty cathedral, cold and echoing", color:"#3a7bd5",
-    full:{void:"#08090c", panel:"#12161c", edge:"#232c38", bone:"#e8ecf2"}, btnClass:"btn-gothic-cathedral", locked:true},
+    full:{void:"#08090c", panel:"#12161c", edge:"#232c38", bone:"#e8ecf2"}, btnClass:"btn-gothic-cathedral", locked:false},
   {id:"haunted-prison", label:"Haunted Prison", icon:"\uD83D\uDD12", tag:"A decommissioned prison where sentences never ended", color:"#6fa8c9",
-    full:{void:"#08090a", panel:"#131515", edge:"#262b2a", bone:"#e4e8e6"}, btnClass:"btn-haunted-prison", locked:true},
+    full:{void:"#08090a", panel:"#131515", edge:"#262b2a", bone:"#e4e8e6"}, btnClass:"btn-haunted-prison", locked:false},
   {id:"pirate-curse", label:"Pirate Curse", icon:"\u2620", tag:"A doomed crew, sailing forever for cursed gold", color:"#4dffb0",
-    full:{void:"#070a0a", panel:"#0e1a1a", edge:"#1f3535", bone:"#e6f2ee"}, btnClass:"btn-pirate-curse", locked:true},
+    full:{void:"#070a0a", panel:"#0e1a1a", edge:"#1f3535", bone:"#e6f2ee"}, btnClass:"btn-pirate-curse", locked:false},
   {id:"abandoned-orphanage", label:"Abandoned Orphanage", icon:"\uD83E\uDDF8", tag:"Quiet, sad, and unsettling in its stillness", color:"#e08cb0",
-    full:{void:"#0a0a0c", panel:"#17161c", edge:"#2b2833", bone:"#ece8ee"}, btnClass:"btn-abandoned-orphanage", locked:true},
+    full:{void:"#0a0a0c", panel:"#17161c", edge:"#2b2833", bone:"#ece8ee"}, btnClass:"btn-abandoned-orphanage", locked:false},
   {id:"doll-house", label:"Creepy Doll House", icon:"\uD83E\uDE86", tag:"Miniature rooms where nothing stays where you left it", color:"#ff6fa3",
-    full:{void:"#0c0709", panel:"#1a0e13", edge:"#331a24", bone:"#f0e4e8"}, btnClass:"btn-doll-house", locked:true},
+    full:{void:"#0c0709", panel:"#1a0e13", edge:"#331a24", bone:"#f0e4e8"}, btnClass:"btn-doll-house", locked:false},
   {id:"toy-factory", label:"Possessed Toy Factory", icon:"\u2699", tag:"An assembly line that never really stopped", color:"#f0c22e",
-    full:{void:"#0a0906", panel:"#171410", edge:"#2f291d", bone:"#f0ece0"}, btnClass:"btn-toy-factory", locked:true},
+    full:{void:"#0a0906", panel:"#171410", edge:"#2f291d", bone:"#f0ece0"}, btnClass:"btn-toy-factory", locked:false},
   {id:"medieval-dungeon", label:"Medieval Dungeon", icon:"\u26D3", tag:"Damp stone cells and centuries of suffering", color:"#e0812f",
-    full:{void:"#08070a", panel:"#14121a", edge:"#292332", bone:"#ece8ea"}, btnClass:"btn-medieval-dungeon", locked:true},
+    full:{void:"#08070a", panel:"#14121a", edge:"#292332", bone:"#ece8ea"}, btnClass:"btn-medieval-dungeon", locked:false},
   {id:"area-51", label:"Area 51", icon:"\uD83D\uDEF8", tag:"A classified facility hiding something that shouldn't exist", color:"#3affb8",
-    full:{void:"#06080a", panel:"#0e1418", edge:"#1e2c33", bone:"#e4eef0"}, btnClass:"btn-area-51", locked:true},
+    full:{void:"#06080a", panel:"#0e1418", edge:"#1e2c33", bone:"#e4eef0"}, btnClass:"btn-area-51", locked:false},
   {id:"alien-mothership", label:"Alien Mothership", icon:"\uD83D\uDEF8", tag:"A vast vessel humming with unknowable technology", color:"#3ae8ff",
-    full:{void:"#05080a", panel:"#0a1a1c", edge:"#163538", bone:"#e4f5f5"}, btnClass:"btn-alien-mothership", locked:true},
+    full:{void:"#05080a", panel:"#0a1a1c", edge:"#163538", bone:"#e4f5f5"}, btnClass:"btn-alien-mothership", locked:false},
   {id:"arctic-station", label:"Arctic Research Station", icon:"\u2744", tag:"An isolated polar base, radio silent for weeks", color:"#7fe0ff",
-    full:{void:"#06090b", panel:"#0e1a1e", edge:"#1f3438", bone:"#eaf6f8"}, btnClass:"btn-arctic-station", locked:true},
+    full:{void:"#06090b", panel:"#0e1a1e", edge:"#1f3438", bone:"#eaf6f8"}, btnClass:"btn-arctic-station", locked:false},
   {id:"biohazard-facility", label:"Biohazard Facility", icon:"\u2623", tag:"A quarantine that failed, evacuated mid-alarm", color:"#e8d92e",
-    full:{void:"#070a07", panel:"#0f1a10", edge:"#223322", bone:"#e6f0e2"}, btnClass:"btn-biohazard-facility", locked:true},
+    full:{void:"#070a07", panel:"#0f1a10", edge:"#223322", bone:"#e6f0e2"}, btnClass:"btn-biohazard-facility", locked:false},
   {id:"apocalypse", label:"Apocalypse", icon:"\uD83C\uDFDA", tag:"The world already ended -- you're investigating what's left", color:"#d97b3d",
-    full:{void:"#0a0908", panel:"#17140f", edge:"#302a20", bone:"#ece7dd"}, btnClass:"btn-apocalypse", locked:true},
+    full:{void:"#0a0908", panel:"#17140f", edge:"#302a20", bone:"#ece7dd"}, btnClass:"btn-apocalypse", locked:false},
   {id:"swamp-of-the-dead", label:"Swamp of the Dead", icon:"\uD83C\uDF33", tag:"A sunken bayou where the water never stops moving", color:"#7dd94a",
-    full:{void:"#070a06", panel:"#101a0e", edge:"#213321", bone:"#e6f0e0"}, btnClass:"btn-swamp-of-the-dead", locked:true},
+    full:{void:"#070a06", panel:"#101a0e", edge:"#213321", bone:"#e6f0e0"}, btnClass:"btn-swamp-of-the-dead", locked:false},
   {id:"voodoo-village", label:"Voodoo Village", icon:"\uD83C\uDFAD", tag:"Old rites still practised after dark", color:"#d43ad4",
-    full:{void:"#0a060a", panel:"#180c17", edge:"#331a30", bone:"#f0e4ee"}, btnClass:"btn-voodoo-village", locked:true},
+    full:{void:"#0a060a", panel:"#180c17", edge:"#331a30", bone:"#f0e4ee"}, btnClass:"btn-voodoo-village", locked:false},
   {id:"cursed-mine", label:"Cursed Mine", icon:"\u26CF", tag:"A collapsed shaft where the miners never came back up", color:"#d9a83a",
-    full:{void:"#080705", panel:"#16130d", edge:"#2e2818", bone:"#ece6d8"}, btnClass:"btn-cursed-mine", locked:true},
+    full:{void:"#080705", panel:"#16130d", edge:"#2e2818", bone:"#ece6d8"}, btnClass:"btn-cursed-mine", locked:false},
   {id:"catacombs", label:"Catacombs", icon:"\uD83D\uDC80", tag:"Endless tunnels lined floor to ceiling with bone", color:"#e8e2d4",
-    full:{void:"#08080a", panel:"#131316", edge:"#262429", bone:"#ece8e0"}, btnClass:"btn-catacombs", locked:true},
+    full:{void:"#08080a", panel:"#131316", edge:"#262429", bone:"#ece8e0"}, btnClass:"btn-catacombs", locked:false},
   {id:"spider-lair", label:"Spider Lair", icon:"\uD83D\uDD77", tag:"Webs thick as rope, and something watching from above", color:"#9dff3a",
-    full:{void:"#070806", panel:"#12140f", edge:"#262b1e", bone:"#e8ecdc"}, btnClass:"btn-spider-lair", locked:true},
+    full:{void:"#070806", panel:"#12140f", edge:"#262b1e", bone:"#e8ecdc"}, btnClass:"btn-spider-lair", locked:false},
   {id:"snake-temple", label:"Snake Temple", icon:"\uD83D\uDC0D", tag:"A jungle shrine still guarded long after its priests", color:"#3ad98a",
-    full:{void:"#06090a", panel:"#0e1a10", edge:"#1f3322", bone:"#e6f2e6"}, btnClass:"btn-snake-temple", locked:true},
+    full:{void:"#06090a", panel:"#0e1a10", edge:"#1f3322", bone:"#e6f2e6"}, btnClass:"btn-snake-temple", locked:false},
   {id:"haunted-circus", label:"Haunted Circus", icon:"\uD83C\uDFAA", tag:"The big top where the show never really ended", color:"#ff2e4d",
-    full:{void:"#0a0708", panel:"#1a0e12", edge:"#331a20", bone:"#f0e4e6"}, btnClass:"btn-haunted-circus", locked:true},
+    full:{void:"#0a0708", panel:"#1a0e12", edge:"#331a20", bone:"#f0e4e6"}, btnClass:"btn-haunted-circus", locked:false},
   {id:"nightmare-factory", label:"Nightmare Factory", icon:"\u2699", tag:"Machinery grinding fear into something tangible", color:"#b83aff",
-    full:{void:"#08060a", panel:"#140a18", edge:"#291433", bone:"#ece4f0"}, btnClass:"btn-nightmare-factory", locked:true},
+    full:{void:"#08060a", panel:"#140a18", edge:"#291433", bone:"#ece4f0"}, btnClass:"btn-nightmare-factory", locked:false},
   {id:"black-forest", label:"Black Forest", icon:"\uD83C\uDF32", tag:"Ancient woods where sunlight never reaches the ground", color:"#6fd97a",
-    full:{void:"#050705", panel:"#0c130c", edge:"#1c2b1c", bone:"#e6ede4"}, btnClass:"btn-black-forest", locked:true},
+    full:{void:"#050705", panel:"#0c130c", edge:"#1c2b1c", bone:"#e6ede4"}, btnClass:"btn-black-forest", locked:false},
   {id:"frozen-horror", label:"Frozen Horror", icon:"\uD83E\uDDCA", tag:"A blizzard-locked wasteland hiding something beneath the ice", color:"#5fd4ff",
-    full:{void:"#050709", panel:"#0c161c", edge:"#1c3038", bone:"#eaf6fa"}, btnClass:"btn-frozen-horror", locked:true},
+    full:{void:"#050709", panel:"#0c161c", edge:"#1c3038", bone:"#eaf6fa"}, btnClass:"btn-frozen-horror", locked:false},
   {id:"haunted-lighthouse", label:"Haunted Lighthouse", icon:"\uD83D\uDDFC", tag:"A keeper vanished decades ago, but the light still turns", color:"#ffb347",
-    full:{void:"#06090b", panel:"#0e1a1e", edge:"#1f343a", bone:"#eaf4f2"}, btnClass:"btn-haunted-lighthouse", locked:true},
+    full:{void:"#06090b", panel:"#0e1a1e", edge:"#1f343a", bone:"#eaf4f2"}, btnClass:"btn-haunted-lighthouse", locked:false},
   {id:"abandoned-subway", label:"Abandoned Subway", icon:"\uD83D\uDE87", tag:"Tracks leading into tunnels the trains no longer run", color:"#e8c93a",
-    full:{void:"#07080a", panel:"#0f1315", edge:"#202a2d", bone:"#e6eceb"}, btnClass:"btn-abandoned-subway", locked:true},
+    full:{void:"#07080a", panel:"#0f1315", edge:"#202a2d", bone:"#e6eceb"}, btnClass:"btn-abandoned-subway", locked:false},
   {id:"phantom-train", label:"Phantom Train", icon:"\uD83D\uDE82", tag:"A locomotive still running a route that no longer exists", color:"#e8dfe8",
-    full:{void:"#08070a", panel:"#150e14", edge:"#2c1d2a", bone:"#ece6ec"}, btnClass:"btn-phantom-train", locked:true},
+    full:{void:"#08070a", panel:"#150e14", edge:"#2c1d2a", bone:"#ece6ec"}, btnClass:"btn-phantom-train", locked:false},
   {id:"sunken-city", label:"Sunken City", icon:"\uD83C\uDFDA", tag:"A drowned city, streets still visible beneath dark water", color:"#2fd9c4",
-    full:{void:"#050a0a", panel:"#0a1818", edge:"#1a302e", bone:"#e2f2ee"}, btnClass:"btn-sunken-city", locked:true},
+    full:{void:"#050a0a", panel:"#0a1818", edge:"#1a302e", bone:"#e2f2ee"}, btnClass:"btn-sunken-city", locked:false},
   {id:"atlantis-ruins", label:"Atlantis Ruins", icon:"\uD83D\uDD3A", tag:"A lost civilisation's crystal spires, faintly humming", color:"#4defff",
-    full:{void:"#04080a", panel:"#081a1e", edge:"#163338", bone:"#e4f7f9"}, btnClass:"btn-atlantis-ruins", locked:true},
+    full:{void:"#04080a", panel:"#081a1e", edge:"#163338", bone:"#e4f7f9"}, btnClass:"btn-atlantis-ruins", locked:false},
   {id:"dragons-crypt", label:"Dragon's Crypt", icon:"\uD83D\uDC09", tag:"A hoard-filled cavern radiating old, dangerous power", color:"#f0b52e",
-    full:{void:"#0a0704", panel:"#1c1408", edge:"#3d2c10", bone:"#f2e8d0"}, btnClass:"btn-dragons-crypt", locked:true},
+    full:{void:"#0a0704", panel:"#1c1408", edge:"#3d2c10", bone:"#f2e8d0"}, btnClass:"btn-dragons-crypt", locked:false},
   {id:"samurai-curse", label:"Samurai Curse", icon:"\u2694", tag:"A battlefield where honour was never restored", color:"#d43a4a",
-    full:{void:"#08070a", panel:"#150c11", edge:"#2e1620", bone:"#ece6e8"}, btnClass:"btn-samurai-curse", locked:true},
+    full:{void:"#08070a", panel:"#150c11", edge:"#2e1620", bone:"#ece6e8"}, btnClass:"btn-samurai-curse", locked:false},
   {id:"japanese-temple", label:"Ancient Japanese Temple", icon:"\u26E9", tag:"A mountain shrine still tended by no one you can see", color:"#d9432f",
-    full:{void:"#070a08", panel:"#101a13", edge:"#223326", bone:"#e8f0e6"}, btnClass:"btn-japanese-temple", locked:true},
+    full:{void:"#070a08", panel:"#101a13", edge:"#223326", bone:"#e8f0e6"}, btnClass:"btn-japanese-temple", locked:false},
   {id:"haunted-mansion", label:"Haunted Mansion", icon:"\uD83D\uDD6F", tag:"A theatrical, playful-dark classic haunted house", color:"#9a5fe0",
-    full:{void:"#0a080c", panel:"#17121c", edge:"#2f2638", bone:"#ece8f0"}, btnClass:"btn-haunted-mansion", locked:true},
+    full:{void:"#0a080c", panel:"#17121c", edge:"#2f2638", bone:"#ece8f0"}, btnClass:"btn-haunted-mansion", locked:false},
   {id:"steampunk-lab", label:"Steampunk Laboratory", icon:"\u2699", tag:"Brass, steam, and an experiment in contacting the dead", color:"#d98a3d",
-    full:{void:"#0a0805", panel:"#1c150c", edge:"#3a2b16", bone:"#f0e8d8"}, btnClass:"btn-steampunk-lab", locked:true},
+    full:{void:"#0a0805", panel:"#1c150c", edge:"#3a2b16", bone:"#f0e8d8"}, btnClass:"btn-steampunk-lab", locked:false},
   {id:"lovecraft-horror", label:"Lovecraft Horror", icon:"\uD83D\uDC19", tag:"Cosmic dread glimpsed at the edge of sanity", color:"#2fb8a8",
-    full:{void:"#04050a", panel:"#0a0e18", edge:"#1a2233", bone:"#e0e8ec"}, btnClass:"btn-lovecraft-horror", locked:true},
+    full:{void:"#04050a", panel:"#0a0e18", edge:"#1a2233", bone:"#e0e8ec"}, btnClass:"btn-lovecraft-horror", locked:false},
   {id:"shadow-realm", label:"Shadow Realm", icon:"\uD83D\uDC64", tag:"A place between places -- pure darkness given shape", color:"#7a3ae0",
-    full:{void:"#020203", panel:"#060608", edge:"#131316", bone:"#d8d8e0"}, btnClass:"btn-shadow-realm", locked:true},
+    full:{void:"#020203", panel:"#060608", edge:"#131316", bone:"#d8d8e0"}, btnClass:"btn-shadow-realm", locked:false},
   {id:"crystal-caverns", label:"Crystal Caverns", icon:"\uD83D\uDD2E", tag:"Glowing formations that seem to remember something", color:"#a15fff",
-    full:{void:"#050810", panel:"#0a1420", edge:"#1a2c40", bone:"#e8ecf7"}, btnClass:"btn-crystal-caverns", locked:true},
+    full:{void:"#050810", panel:"#0a1420", edge:"#1a2c40", bone:"#e8ecf7"}, btnClass:"btn-crystal-caverns", locked:false},
   {id:"dark-carnival", label:"Dark Carnival", icon:"\uD83C\uDFAA", tag:"The midway's more sinister, nighttime cousin", color:"#d9214d",
-    full:{void:"#06050a", panel:"#120a16", edge:"#26142e", bone:"#ece4ec"}, btnClass:"btn-dark-carnival", locked:true},
+    full:{void:"#06050a", panel:"#120a16", edge:"#26142e", bone:"#ece4ec"}, btnClass:"btn-dark-carnival", locked:false},
   {id:"cosmic-horror", label:"Cosmic Horror", icon:"\u2B50", tag:"The universe itself as the haunting", color:"#8a4de0",
-    full:{void:"#030308", panel:"#08081a", edge:"#16163a", bone:"#e4e4f2"}, btnClass:"btn-cosmic-horror", locked:true},
+    full:{void:"#030308", panel:"#08081a", edge:"#16163a", bone:"#e4e4f2"}, btnClass:"btn-cosmic-horror", locked:false},
   {id:"final-nightmare", label:"The Final Nightmare", icon:"\uD83D\uDC41", tag:"Everything the app has been building toward, all at once", color:"#d43a8a",
-    full:{void:"#050505", panel:"#0f0a12", edge:"#241a2c", bone:"#f0ecec"}, btnClass:"btn-final-nightmare", locked:true}
+    full:{void:"#050505", panel:"#0f0a12", edge:"#241a2c", bone:"#f0ecec"}, btnClass:"btn-final-nightmare", locked:false}
 ];
 var ALL_BTN_CLASSES = THEME_PRESETS.filter(function(p){ return p.btnClass; }).map(function(p){ return p.btnClass; });
 var currentThemeId="dynamic";
@@ -2498,7 +2593,7 @@ function applyNavIcons(id){
     var btn = document.querySelector('.nav-btn[data-nav="'+key+'"] .ic');
     if(!btn) return;
     if(imageSet && imageSet[key]){
-      btn.innerHTML = '<img src="'+imageSet[key]+'" alt="" style="width:24px; height:24px; object-fit:contain; border-radius:4px; vertical-align:middle; display:block; filter:drop-shadow(0 0 4px rgba(213,174,91,.25));">';
+      btn.innerHTML = '<img src="'+imageSet[key]+'" alt="" style="width:22px; height:22px; object-fit:cover; border-radius:4px; vertical-align:middle;">';
     } else {
       btn.textContent = overrides[key] || DEFAULT_NAV_ICONS[key];
     }
@@ -2572,8 +2667,15 @@ function applyTheme(id){
     return;
   }
   currentThemeId=id;
-  document.body.dataset.theme = id;
-  document.documentElement.dataset.theme = id;
+  // Full visual world: load a local artwork background for every named theme.
+  document.body.classList.remove("theme-art-active");
+  document.body.className = document.body.className.split(/\s+/).filter(function(c){ return c.indexOf("theme-art-")!==0; }).join(" ").trim();
+  if(id!=="dynamic" && preset.id){
+    document.body.classList.add("theme-art-active","theme-art-"+preset.id);
+    document.body.style.setProperty("--theme-art", "url('assets/themes/"+preset.id+".svg')");
+  } else {
+    document.body.style.removeProperty("--theme-art");
+  }
   document.querySelectorAll(".screen").forEach(function(el){
     if(id==="dynamic"){ el.style.removeProperty("--accent"); }
     else { el.style.setProperty("--accent", preset.color, "important"); }
@@ -2603,6 +2705,12 @@ function applyTheme(id){
   }
   appStorage.set("appTheme", id, false).catch(function(){});
 }
+(function(){
+var profiles={"haunted-hotel": ["theme-world-bottom", "tool-brass", "theme-candle", "world-rough"], "vampire-castle": ["theme-world-left", "tool-occult", "theme-fog", "world-gothic"], "witchs-cottage": ["theme-world-floating", "tool-occult", "theme-fog", "world-rough"], "cursed-carnival": ["theme-world-top", "tool-occult", "theme-static", "world-carnival"], "ghost-ship": ["theme-world-bottom", "tool-brass", "theme-fog", "world-rough"], "victorian-manor": ["theme-world-left", "tool-brass", "theme-candle", "world-gothic"], "abandoned-asylum": ["theme-world-right", "tool-terminal", "theme-static", "world-terminal"], "zombie-laboratory": ["theme-world-right", "tool-terminal", "theme-scanlines", "world-terminal"], "egyptian-tomb": ["theme-world-top", "tool-brass", "theme-dust", "world-stone"], "werewolf-forest": ["theme-world-floating", "tool-wood", "theme-fog", "world-rough"], "hells-gate": ["theme-world-bottom", "tool-fire", "theme-embers", "world-rough"], "demon-temple": ["theme-world-floating", "tool-occult", "theme-candle", "world-stone"], "gothic-cathedral": ["theme-world-left", "tool-occult", "theme-dust", "world-gothic"], "haunted-prison": ["theme-world-left", "tool-terminal", "theme-static", "world-stone"], "pirate-curse": ["theme-world-bottom", "tool-brass", "theme-fog", "world-rough"], "abandoned-orphanage": ["theme-world-right", "tool-wood", "theme-dust", "world-rough"], "doll-house": ["theme-world-floating", "tool-occult", "theme-candle", "world-round"], "toy-factory": ["theme-world-top", "tool-terminal", "theme-static", "world-terminal"], "medieval-dungeon": ["theme-world-left", "tool-brass", "theme-fog", "world-stone"], "area-51": ["theme-world-right", "tool-terminal", "theme-scanlines", "world-terminal"], "alien-mothership": ["theme-world-floating", "tool-terminal", "theme-scanlines", "world-round"], "arctic-station": ["theme-world-top", "tool-ice", "theme-snow", "world-ice"], "biohazard-facility": ["theme-world-right", "tool-terminal", "theme-scanlines", "world-terminal"], "apocalypse": ["theme-world-bottom", "tool-fire", "theme-dust", "world-rough"], "swamp-of-the-dead": ["theme-world-floating", "tool-wood", "theme-fog", "world-rough"], "voodoo-village": ["theme-world-bottom", "tool-occult", "theme-candle", "world-rough"], "cursed-mine": ["theme-world-left", "tool-wood", "theme-dust", "world-rough"], "catacombs": ["theme-world-left", "tool-brass", "theme-candle", "world-stone"], "spider-lair": ["theme-world-floating", "tool-occult", "theme-fog", "world-rough"], "snake-temple": ["theme-world-top", "tool-occult", "theme-fog", "world-stone"], "haunted-circus": ["theme-world-top", "tool-occult", "theme-static", "world-carnival"], "nightmare-factory": ["theme-world-right", "tool-terminal", "theme-static", "world-terminal"], "black-forest": ["theme-world-floating", "tool-wood", "theme-fog", "world-rough"], "frozen-horror": ["theme-world-top", "tool-ice", "theme-snow", "world-ice"], "haunted-lighthouse": ["theme-world-right", "tool-brass", "theme-fog", "world-gothic"], "abandoned-subway": ["theme-world-left", "tool-terminal", "theme-static", "world-terminal"], "phantom-train": ["theme-world-bottom", "tool-brass", "theme-fog", "world-gothic"], "sunken-city": ["theme-world-floating", "tool-ice", "theme-fog", "world-round"], "atlantis-ruins": ["theme-world-floating", "tool-ice", "theme-fog", "world-round"], "dragons-crypt": ["theme-world-left", "tool-fire", "theme-embers", "world-rough"], "samurai-curse": ["theme-world-right", "tool-brass", "theme-fog", "world-stone"], "japanese-temple": ["theme-world-top", "tool-wood", "theme-fog", "world-stone"], "haunted-mansion": ["theme-world-bottom", "tool-occult", "theme-candle", "world-gothic"], "steampunk-lab": ["theme-world-left", "tool-brass", "theme-static", "world-terminal"], "lovecraft-horror": ["theme-world-floating", "tool-occult", "theme-static", "world-rough"], "shadow-realm": ["theme-world-floating", "tool-occult", "theme-static", "world-round"], "crystal-caverns": ["theme-world-floating", "tool-ice", "theme-scanlines", "world-ice"], "dark-carnival": ["theme-world-top", "tool-occult", "theme-static", "world-carnival"], "cosmic-horror": ["theme-world-floating", "tool-occult", "theme-static", "world-round"], "final-nightmare": ["theme-world-bottom", "tool-fire", "theme-embers", "world-rough"]};
+var all=['theme-world-bottom','theme-world-left','theme-world-right','theme-world-top','theme-world-floating','tool-brass','tool-terminal','tool-occult','tool-ice','tool-fire','tool-wood','theme-fog','theme-snow','theme-embers','theme-candle','theme-scanlines','theme-dust','theme-static','world-gothic','world-carnival','world-ice','world-stone','world-rough','world-terminal','world-round'];
+var baseApply=applyTheme;
+applyTheme=function(id){baseApply(id);var b=document.body;all.forEach(function(c){b.classList.remove(c);});(profiles[id]||[]).forEach(function(c){b.classList.add(c);});b.dataset.worldTheme=id;};
+})();
 function renderThemeSwatches(){
   var row=$("themeSwatchRow"); row.innerHTML="";
   THEME_PRESETS.forEach(function(p){
@@ -2611,6 +2719,7 @@ function renderThemeSwatches(){
     sw.className="theme-swatch"+(p.id===currentThemeId?" active":"")+(isLocked?" locked":"");
     sw.dataset.theme=p.id;
     sw.style.background = p.swatch || p.color;
+    if(p.id!=="dynamic") { sw.style.backgroundImage = "url(\'assets/themes/"+p.id+".svg\')"; sw.style.backgroundSize="cover"; sw.style.backgroundPosition="center"; }
     sw.title = isLocked ? (p.label+" (locked)") : p.label;
     if(isLocked){
       var lock=document.createElement("span");
@@ -2682,8 +2791,9 @@ function renderThemeGallery(){
       var card=document.createElement("div");
       card.className="theme-gallery-card"+(p.id===currentThemeId?" active":"")+(isLocked?" locked":"");
       var swatchStyle = p.swatch || p.color;
+      var artBg = (p.id!=="dynamic" ? "background-image:linear-gradient(rgba(0,0,0,.18),rgba(0,0,0,.38)),url('assets/themes/"+p.id+".svg');background-size:cover;background-position:center;" : "background:"+swatchStyle+";");
       card.innerHTML =
-        '<div class="tg-swatch" style="background:'+swatchStyle+';">'+
+        '<div class="tg-swatch" style="'+artBg+'">'+
           (isLocked ? '<span class="theme-lock-badge">\uD83D\uDD12</span>' : '<span class="theme-icon-badge">'+(p.icon||"")+'</span>')+
         '</div>'+
         '<div class="tg-info">'+
@@ -5983,6 +6093,137 @@ $("zodHistBtn").addEventListener("click", function(){
   $("zodHistModal").classList.remove("hidden");
 });
 $("zodHistClose").addEventListener("click", function(){ $("zodHistModal").classList.add("hidden"); });
+})();
+</script>
+<style id="premium-theme-upgrade">
+:root{--theme-transition-ms:520ms;--theme-motion:1;--theme-contrast:1;}
+body.reduce-motion *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+body.high-contrast{filter:contrast(1.12)}
+body.high-contrast .card,body.high-contrast .tool-panel,body.high-contrast .navbar{border-width:2px!important}
+body.theme-transitioning #app{transition:filter var(--theme-transition-ms) ease,transform var(--theme-transition-ms) ease;filter:brightness(1.12) saturate(1.08)}
+.theme-transition-screen{position:fixed;inset:0;z-index:500;pointer-events:none;opacity:0;background:var(--theme-art);background-size:cover;background-position:center;mix-blend-mode:screen;transition:opacity var(--theme-transition-ms) ease}
+.theme-transition-screen.on{opacity:.62}
+.theme-world-badge{position:absolute;top:54px;left:14px;z-index:8;max-width:calc(100% - 28px);padding:5px 9px;border:1px solid color-mix(in srgb,var(--accent) 48%,transparent);background:rgba(0,0,0,.52);backdrop-filter:blur(7px);color:var(--accent);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border-radius:5px;pointer-events:none;box-shadow:0 0 16px color-mix(in srgb,var(--accent) 14%,transparent)}
+body.theme-world-top .theme-world-badge{top:72px}
+body.theme-world-left .theme-world-badge{left:92px}
+body.theme-world-right .theme-world-badge{right:92px;left:auto}
+body.reduce-motion .theme-world-badge{transition:none}
+/* Physical instrument treatment: makes the working tool feel native to the selected world. */
+body.tool-brass .gauge-wrap,body.tool-brass .radar-canvas-wrap,body.tool-brass .freq-panel,body.tool-brass .evp-wave,body.tool-brass .cam-screen{border-color:#a77b38!important;box-shadow:inset 0 0 0 2px rgba(201,162,75,.12),0 10px 28px rgba(0,0,0,.45),0 0 18px rgba(201,162,75,.10)!important}
+body.tool-brass .gauge-wrap:before,body.tool-brass .radar-canvas-wrap:before,body.tool-brass .freq-panel:before,body.tool-brass .evp-wave:before,body.tool-brass .cam-screen:before{content:"FIELD INSTRUMENT • CALIBRATED";position:absolute;top:5px;right:7px;font-size:7px;letter-spacing:1.2px;color:#c9a24b;opacity:.65;z-index:9;pointer-events:none}
+body.tool-terminal .radar-canvas-wrap,body.tool-terminal .freq-panel,body.tool-terminal .cam-screen,body.tool-terminal .evp-wave{border-color:#3affb8!important;background-color:#06100d!important;box-shadow:inset 0 0 35px rgba(58,255,184,.09),0 0 22px rgba(58,255,184,.08)!important}
+body.tool-terminal .radar-canvas-wrap:after,body.tool-terminal .cam-screen:after{content:"SECURE FEED // LIVE";position:absolute;top:7px;left:9px;color:#3affb8;font:8px/1 monospace;letter-spacing:1px;opacity:.7;z-index:9;pointer-events:none}
+body.tool-occult .radar-canvas-wrap,body.tool-occult .freq-panel,body.tool-occult .evp-wave,body.tool-occult .gauge-wrap{border-color:#a83aff!important;box-shadow:inset 0 0 28px rgba(168,58,255,.08),0 0 25px rgba(168,58,255,.12)!important}
+body.tool-occult .radar-canvas-wrap:before{content:"◈  RITUAL RESONANCE  ◈";position:absolute;top:7px;left:50%;transform:translateX(-50%);color:#d43ad4;font-size:8px;letter-spacing:2px;z-index:9;opacity:.72;pointer-events:none;white-space:nowrap}
+body.tool-ice .radar-canvas-wrap,body.tool-ice .freq-panel,body.tool-ice .cam-screen,body.tool-ice .evp-wave{border-color:#5fd4ff!important;box-shadow:inset 0 0 32px rgba(95,212,255,.12),0 0 24px rgba(95,212,255,.12)!important}
+body.tool-ice .radar-canvas-wrap:before{content:"FROST SENSOR // -18°C";position:absolute;top:7px;left:9px;color:#eef7fa;font:8px monospace;letter-spacing:1px;opacity:.7;z-index:9;pointer-events:none}
+body.tool-fire .radar-canvas-wrap,body.tool-fire .freq-panel,body.tool-fire .cam-screen,body.tool-fire .evp-wave{border-color:#ff4620!important;box-shadow:inset 0 0 35px rgba(255,70,32,.12),0 0 26px rgba(255,70,32,.14)!important}
+body.tool-fire .radar-canvas-wrap:before{content:"THERMAL THRESHOLD // CRITICAL";position:absolute;top:7px;left:9px;color:#ff8b60;font:8px monospace;letter-spacing:1px;z-index:9;pointer-events:none}
+body.tool-wood .radar-canvas-wrap,body.tool-wood .freq-panel,body.tool-wood .cam-screen,body.tool-wood .evp-wave{border-color:#7d5a2e!important;box-shadow:inset 0 0 28px rgba(50,35,15,.45),0 10px 30px rgba(0,0,0,.5)!important}
+/* Theme gallery: make preview cards feel like mini applications. */
+.theme-gallery-card{position:relative;overflow:hidden;min-height:96px!important}
+.theme-gallery-card .tg-swatch{width:112px!important;height:78px!important;flex:0 0 112px!important;border-radius:7px!important;box-shadow:inset 0 0 35px rgba(0,0,0,.35),0 5px 18px rgba(0,0,0,.25)}
+.theme-gallery-card .tg-info{min-width:0}
+.theme-gallery-card .tg-name{font-size:13px!important;letter-spacing:1px}
+.theme-gallery-card .tg-tag{line-height:1.35!important}
+.theme-preview-hint{font-size:9px;color:var(--dim);letter-spacing:.8px;margin-top:5px}
+/* Full interactive preview modal */
+.theme-preview-modal{position:fixed;inset:0;z-index:480;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:14px}
+.theme-preview-modal.show{display:flex}
+.theme-preview-shell{width:min(680px,96vw);height:min(760px,94vh);border:1px solid var(--accent);border-radius:18px;overflow:hidden;background:#08090a;box-shadow:0 25px 90px rgba(0,0,0,.7),0 0 40px color-mix(in srgb,var(--accent) 18%,transparent);display:flex;flex-direction:column}
+.theme-preview-top{padding:12px 14px;border-bottom:1px solid color-mix(in srgb,var(--accent) 45%,transparent);display:flex;justify-content:space-between;align-items:center;background:rgba(0,0,0,.58)}
+.theme-preview-title{font-size:14px;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.theme-preview-close{border:1px solid var(--accent);background:transparent;color:var(--bone);border-radius:7px;padding:6px 9px;font-family:inherit}
+.theme-preview-stage{position:relative;flex:1;overflow:auto;padding:14px;background-image:linear-gradient(rgba(0,0,0,.34),rgba(0,0,0,.62)),var(--preview-art);background-size:cover;background-position:center}
+.preview-scene{min-height:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-content:start}
+.preview-device{min-height:128px;padding:12px;border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);background:rgba(5,5,6,.68);backdrop-filter:blur(8px);box-shadow:0 10px 28px rgba(0,0,0,.35);position:relative;overflow:hidden}
+.preview-device h4{margin:0 0 9px;color:var(--accent);font-size:10px;letter-spacing:1.7px}
+.preview-device .fake-readout{height:55px;border:1px solid color-mix(in srgb,var(--accent) 38%,transparent);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:22px;background:rgba(0,0,0,.28);text-shadow:0 0 12px currentColor}
+.preview-device .fake-bars{display:flex;gap:3px;align-items:flex-end;height:55px}.preview-device .fake-bars i{width:8px;background:var(--accent);opacity:.72}.preview-device .fake-bars i:nth-child(1){height:18%}.preview-device .fake-bars i:nth-child(2){height:42%}.preview-device .fake-bars i:nth-child(3){height:70%}.preview-device .fake-bars i:nth-child(4){height:34%}.preview-device .fake-bars i:nth-child(5){height:88%}.preview-device .fake-bars i:nth-child(6){height:58%}
+.preview-wide{grid-column:1/-1;min-height:155px}
+.preview-wide .fake-radar{width:132px;height:132px;border-radius:50%;border:2px solid var(--accent);margin:auto;position:relative;box-shadow:0 0 25px color-mix(in srgb,var(--accent) 20%,transparent),inset 0 0 25px rgba(0,0,0,.5)}
+.preview-wide .fake-radar:before,.preview-wide .fake-radar:after{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:color-mix(in srgb,var(--accent) 45%,transparent);transform:translateX(-50%)}
+.preview-wide .fake-radar:after{top:50%;left:0;right:0;width:auto;height:1px;bottom:auto;transform:none}
+.preview-wide .blip{position:absolute;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);left:62%;top:31%}
+.preview-nav{display:flex;gap:5px;justify-content:center;padding-top:10px}.preview-nav span{border:1px solid color-mix(in srgb,var(--accent) 50%,transparent);padding:5px 7px;font-size:8px;color:var(--accent);background:rgba(0,0,0,.35)}
+@media(max-width:520px){.preview-scene{grid-template-columns:1fr}.preview-wide{grid-column:auto}.theme-preview-shell{height:92vh}.theme-gallery-card .tg-swatch{width:92px!important;flex-basis:92px!important}}
+/* Accessibility + world settings */
+.theme-enhance-settings{margin-top:8px}.theme-enhance-settings .toggle-row{margin-top:5px}
+</style>
+<script>
+(function(){
+  var worldNames={
+    'haunted-hotel':'Victorian field investigation','vampire-castle':'Gothic bloodline archive','witchs-cottage':'Forest witchcraft investigation','cursed-carnival':'Derelict midway investigation','ghost-ship':'Maritime apparition investigation','victorian-manor':'Estate séance archive','abandoned-asylum':'Psychiatric records investigation','zombie-laboratory':'Containment breach investigation','egyptian-tomb':'Archaeological spirit investigation','werewolf-forest':'Night tracking investigation','hells-gate':'Infernal threshold investigation','demon-temple':'Ritual site investigation','gothic-cathedral':'Cathedral apparition investigation','haunted-prison':'Cell block investigation','pirate-curse':'Cursed voyage investigation','abandoned-orphanage':'Lost children archive','doll-house':'Miniature house investigation','toy-factory':'Industrial anomaly investigation','medieval-dungeon':'Dungeon records investigation','area-51':'Classified anomaly investigation','alien-mothership':'Extraterrestrial contact investigation','arctic-station':'Polar anomaly investigation','biohazard-facility':'Containment investigation','apocalypse':'Post-collapse investigation','swamp-of-the-dead':'Bayou apparition investigation','voodoo-village':'Ritual circle investigation','cursed-mine':'Underground anomaly investigation','catacombs':'Ossuary investigation','spider-lair':'Webbed chamber investigation','snake-temple':'Temple guardian investigation','haunted-circus':'Carnival anomaly investigation','nightmare-factory':'Industrial nightmare investigation','black-forest':'Wilderness tracking investigation','frozen-horror':'Ice anomaly investigation','haunted-lighthouse':'Lighthouse keeper investigation','abandoned-subway':'Transit tunnel investigation','phantom-train':'Spectral rail investigation','sunken-city':'Deep-water ruin investigation','atlantis-ruins':'Underwater relic investigation','dragons-crypt':'Draconic hoard investigation','samurai-curse':'Warrior spirit investigation','japanese-temple':'Shrine spirit investigation','haunted-mansion':'Grand estate investigation','steampunk-lab':'Mechanical occult investigation','lovecraft-horror':'Cosmic anomaly investigation','shadow-realm':'Void entity investigation','crystal-caverns':'Resonant crystal investigation','dark-carnival':'Midnight carnival investigation','cosmic-horror':'Deep-space anomaly investigation','final-nightmare':'Convergence investigation'
+  };
+  var toolNames={dashboard:'FIELD COMMAND',spiritbox:'SPIRIT BOX',camera:'NIGHT VISION',radar:'GHOST RADAR',evp:'EVP RECORDER',emf:'EMF METER',graveyard:'CASE RECORDS',stories:'HAUNTED STORIES',timeline:'SESSION LOG',zodiac:'ASTRAL SIGNAL'};
+  var eggMessages={
+    'haunted-hotel':'The elevator stopped on a floor that does not exist.','vampire-castle':'The portrait blinked when you looked away.','witchs-cottage':'Something just crossed the tree line.','cursed-carnival':'The carousel moved without power.','ghost-ship':'There is one more footprint than there should be.','victorian-manor':'The west room was locked from the inside.','abandoned-asylum':'Room 13 is not on the floor plan.','zombie-laboratory':'Containment status changed without an operator.','egyptian-tomb':'The seal is older than the dynasty record.','werewolf-forest':'The tracks changed direction without turning.','hells-gate':'The heat is coming from below the screen.','area-51':'A signal answered from inside the facility.','frozen-horror':'Something is moving beneath the ice.'
+  };
+  function addWorldBadges(){
+    document.querySelectorAll('.screen').forEach(function(screen){
+      if(screen.id==='boot'||screen.id==='themeGallery'||screen.id==='settings'||screen.id==='sleep') return;
+      if(screen.querySelector('.theme-world-badge')) return;
+      var b=document.createElement('div');b.className='theme-world-badge';b.dataset.forScreen=screen.id;b.textContent=toolNames[screen.id]||'FIELD MODULE';screen.appendChild(b);
+    });
+  }
+  function transition(id){
+    var b=document.body, overlay=document.querySelector('.theme-transition-screen');
+    if(!overlay){overlay=document.createElement('div');overlay.className='theme-transition-screen';document.body.appendChild(overlay);}
+    var art=id && id!=='dynamic' ? "url('assets/themes/"+id+".svg')" : 'none';
+    overlay.style.backgroundImage=art==='none'?'none':"linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.25)),"+art;
+    b.classList.add('theme-transitioning');overlay.classList.add('on');
+    setTimeout(function(){overlay.classList.remove('on');b.classList.remove('theme-transitioning');},560);
+  }
+  var audioEnabled=false, audioCtx=null;
+  var soundProfiles={
+    'haunted-hotel':[92,196],'vampire-castle':[65,130],'witchs-cottage':[74,148],'cursed-carnival':[110,233],'ghost-ship':[58,116],'area-51':[180,360],'frozen-horror':[44,88],'hells-gate':[48,96],'voodoo-village':[80,160],'werewolf-forest':[52,104]
+  };
+  function worldSound(kind){
+    if(!audioEnabled || typeof muted!=='undefined' && muted) return;
+    try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)(); if(audioCtx.state==='suspended') audioCtx.resume(); var id=document.body.dataset.worldTheme;var f=(soundProfiles[id]||[70,140]);var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=kind==='confirm'?'triangle':'sine';o.frequency.value=kind==='confirm'?f[1]:f[0];g.gain.setValueAtTime(0.0001,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(kind==='confirm'?.035:.012,audioCtx.currentTime+.02);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.18);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.2);}catch(e){}
+  }
+  function addPreviewModal(){
+    if(document.getElementById('themePreviewModal')) return;
+    var m=document.createElement('div');m.id='themePreviewModal';m.className='theme-preview-modal';
+    m.innerHTML='<div class="theme-preview-shell"><div class="theme-preview-top"><div><div class="theme-preview-title" id="previewTitle">THEME PREVIEW</div><div style="font-size:9px;color:var(--dim);margin-top:3px;letter-spacing:1px;">INTERACTIVE VISUAL PREVIEW</div></div><button class="theme-preview-close" id="previewClose">CLOSE</button></div><div class="theme-preview-stage" id="previewStage"><div class="preview-scene"><div class="preview-device"><h4>DASHBOARD</h4><div class="fake-readout">72%</div><div class="preview-nav"><span>SCAN</span><span>LOG</span><span>CASE</span></div></div><div class="preview-device"><h4>SPIRIT BOX</h4><div class="fake-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="preview-device preview-wide"><h4>GHOST RADAR</h4><div class="fake-radar"><span class="blip"></span></div></div><div class="preview-device"><h4>EMF METER</h4><div class="fake-readout">4.2</div></div><div class="preview-device"><h4>EVP RECORDER</h4><div class="fake-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div><div class="preview-device"><h4>CAMERA</h4><div class="fake-readout">NIGHT</div></div><div class="preview-device"><h4>RECORDS</h4><div class="fake-readout" style="font-size:14px;">CASE 014</div></div></div></div></div>';
+    document.body.appendChild(m);document.getElementById('previewClose').onclick=function(){m.classList.remove('show');};m.addEventListener('click',function(e){if(e.target===m)m.classList.remove('show');});
+  }
+  function showPreview(p){
+    addPreviewModal();var m=document.getElementById('themePreviewModal'),stage=document.getElementById('previewStage');
+    document.documentElement.style.setProperty('--preview-art',"url('assets/themes/"+p.id+".svg')");
+    document.documentElement.style.setProperty('--accent',p.color||'#2bff6b');
+    if(p.full){document.documentElement.style.setProperty('--void',p.full.void);document.documentElement.style.setProperty('--panel',p.full.panel);document.documentElement.style.setProperty('--panel-edge',p.full.edge);document.documentElement.style.setProperty('--bone',p.full.bone);}
+    document.getElementById('previewTitle').textContent=p.label.toUpperCase();stage.dataset.theme=p.id;m.classList.add('show');
+  }
+  function installEnhancements(){
+    addWorldBadges();
+    if(typeof applyTheme==='function' && !applyTheme.__premiumWrapped){
+      var base=applyTheme;
+      var wrapped=function(id){transition(id);base(id);setTimeout(addWorldBadges,30);worldSound('confirm');};wrapped.__premiumWrapped=true;window.applyTheme=wrapped;
+    }
+    var settings=document.getElementById('settings');
+    if(settings && !document.getElementById('themeEnhanceSettings')){
+      var box=document.createElement('div');box.id='themeEnhanceSettings';box.className='theme-enhance-settings';box.innerHTML='<div class="session-log-hdr">THEME EXPERIENCE</div><div class="toggle-row"><div class="desc">ATMOSPHERE AUDIO<small>Subtle theme-specific UI tones</small></div><div class="switch" id="themeAudioSwitch"></div></div><div class="toggle-row"><div class="desc">REDUCE MOTION<small>Disable fog, snow, scanlines and transition effects</small></div><div class="switch" id="themeMotionSwitch"></div></div><div class="toggle-row"><div class="desc">HIGH CONTRAST<small>Increase borders and readability</small></div><div class="switch" id="themeContrastSwitch"></div></div>';
+      var anchor=document.getElementById('fontFamilyRow'); if(anchor) anchor.parentNode.parentNode.insertBefore(box,anchor.parentNode.parentNode.children[anchor.parentNode.parentNode.children.length-1]||null); else settings.querySelector('.settings-wrap').appendChild(box);
+      function setSwitch(id,on){var el=document.getElementById(id);if(el)el.classList.toggle('on',on);}
+      appStorage.get('themeAudio','0').then(function(r){audioEnabled=!!(r&&r.value==='1');setSwitch('themeAudioSwitch',audioEnabled);});
+      appStorage.get('themeMotion','1').then(function(r){var on=!(r&&r.value==='0');document.body.classList.toggle('reduce-motion',!on);setSwitch('themeMotionSwitch',!on);});
+      appStorage.get('themeContrast','0').then(function(r){var on=!!(r&&r.value==='1');document.body.classList.toggle('high-contrast',on);setSwitch('themeContrastSwitch',on);});
+      document.getElementById('themeAudioSwitch').onclick=function(){audioEnabled=!audioEnabled;setSwitch('themeAudioSwitch',audioEnabled);appStorage.set('themeAudio',audioEnabled?'1':'0',false);worldSound('confirm');};
+      document.getElementById('themeMotionSwitch').onclick=function(){var off=!document.body.classList.contains('reduce-motion');document.body.classList.toggle('reduce-motion',off);setSwitch('themeMotionSwitch',off);appStorage.set('themeMotion',off?'0':'1',false);};
+      document.getElementById('themeContrastSwitch').onclick=function(){var on=!document.body.classList.contains('high-contrast');document.body.classList.toggle('high-contrast',on);setSwitch('themeContrastSwitch',on);appStorage.set('themeContrast',on?'1':'0',false);};
+    }
+  }
+  function upgradeGallery(){
+    if(typeof renderThemeGallery!=='function') return;
+    var original=renderThemeGallery;
+    window.renderThemeGallery=function(){original();var cards=document.querySelectorAll('#themeGalleryList .theme-gallery-card');cards.forEach(function(card){var id=card.dataset.theme;if(!id){var txt=card.querySelector('.tg-name');var p=txt&&THEME_PRESETS.find(function(x){return txt.textContent.indexOf(x.label)>=0});id=p&&p.id;}if(id)card.dataset.theme=id;var p=THEME_PRESETS.find(function(x){return x.id===id});if(!p||id==='dynamic')return;var hint=card.querySelector('.theme-preview-hint');if(!hint){hint=document.createElement('div');hint.className='theme-preview-hint';hint.textContent='TAP = APPLY  •  HOLD = PREVIEW';(card.querySelector('.tg-info')||card).appendChild(hint);}var timer;card.addEventListener('pointerdown',function(){timer=setTimeout(function(){showPreview(p);},520);});['pointerup','pointerleave','pointercancel'].forEach(function(ev){card.addEventListener(ev,function(){clearTimeout(timer);});});});};
+  }
+  function installEgg(){
+    document.getElementById('app').addEventListener('dblclick',function(e){if(e.target.closest('button,input,textarea'))return;var id=document.body.dataset.worldTheme;var msg=eggMessages[id];if(!msg)return;var t=document.createElement('div');t.textContent='✦ '+msg;t.style.cssText='position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:400;background:rgba(0,0,0,.86);border:1px solid var(--accent);color:var(--bone);padding:10px 14px;border-radius:8px;max-width:88vw;text-align:center;font-size:12px;letter-spacing:.5px;box-shadow:0 8px 30px rgba(0,0,0,.5);';document.body.appendChild(t);setTimeout(function(){t.remove();},3000);worldSound('confirm');});
+  }
+  function init(){installEnhancements();upgradeGallery();installEgg();setTimeout(function(){addWorldBadges();},200);}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
     <script>

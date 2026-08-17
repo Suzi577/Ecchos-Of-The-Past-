@@ -1,4 +1,4 @@
-const CACHE_NAME = "echoes-pwa-v-fix3";
+const CACHE_NAME = "ecchos-of-the-past-cache-v3-premium-50-themes";
 const ASSETS = ["./index.html", "./manifest.json", "./icon-192.png", "./icon-512.png"];
 
 self.addEventListener("install", (event) => {
@@ -19,12 +19,6 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    fetch(event.request).then((response) => {
-      if (event.request.mode === "navigate" || event.request.destination === "document") {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy));
-      }
-      return response;
-    }).catch(() => caches.match(event.request))
+    caches.match(event.request).then((cached) => cached || fetch(event.request))
   );
 });
