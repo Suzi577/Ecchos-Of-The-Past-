@@ -1,0 +1,388 @@
+ECCHOS OF THE PAST -- VERSION LOG
+==================================
+Keep this file updated each time you make changes and upload a new
+release to Play Console. Match the version number here to the
+"Release name" you type into Play Console so you can always tell
+what's actually live.
+
+HOW TO USE THIS FILE
+---------------------
+1. Before you generate a new .aab in PWABuilder, add a new entry
+   below with today's date and a short list of what changed.
+2. Use that same short list as your Play Console release notes.
+3. Bump the version number (v1.0 -> v1.1 -> v1.2 etc.) -- small
+   number for small changes, bigger jump for major changes.
+
+==================================
+
+v1.0 -- Initial build
+- First working version of the app, built as "Spectratalk"
+- Core tools: Spirit Box, EMF Meter, Ghost Radar, EVP Recorder,
+  Infrared Camera
+
+v1.1 -- Branding
+- App icon created (ghost design on dark background)
+- Icon updated to custom "Ecchos of the Past" artwork with
+  gold/black bordered title text
+
+v1.2 -- Rename
+- Renamed app throughout (manifest, page title, internal IDs,
+  exported file names) from "Spectratalk" to "Ecchos of the Past"
+
+v1.3 -- Pro removal, multiplayer removal, polish
+- Removed the Pro/paywall system -- all features now free
+- Removed the multiplayer "Shared Session" feature entirely
+- Added screen wake lock (phone won't sleep while app is open)
+- Confirmed disclaimer/agreement screen at app start (entertainment
+  only, use-at-own-risk, no liability -- already existed, just
+  renamed inside it)
+- Made Spirit Box more realistic: added radio frequency "chirp"
+  sound during scanning and when a question is asked
+
+v1.4 -- Session history persistence
+- Spirit Box conversation transcript now saves and reloads
+- Investigation Timeline (cross-tool activity log) now saves
+- Camera evidence gallery (captured photos + AI captions) now
+  saves and reloads
+
+v1.5 -- EVP save prompt
+- EVP recordings now show a "Save to device?" prompt after each
+  recording, with a storage-space warning
+- Only saves the actual audio file if you tap "Save to Device"
+- Capped at the 8 most recent saved recordings to protect storage
+
+v1.6 -- EMF/Activity gauge realism
+- The EMF needle and Spirit Activity gauge now drift smoothly and
+  continuously instead of jumping to a new number every ~2 seconds
+- Spike detection, temperature drift, and pattern-correlation logic
+  still run on the original slower timing so spikes aren't logged
+  or flashed dozens of times in a row while the needle glides
+  through a high reading
+
+v1.7 -- Radar/Camera realism, notes, cleanup
+- Ghost Radar blips now fade in gradually and drift slightly during
+  their lifetime instead of popping in and staying pinned in place
+- Infrared Camera feed now has constantly-shifting sensor grain/noise
+  layered into every frame, like real low-light footage
+- Added an Investigator Notes field on the profile screen (free
+  text, saves automatically, persists between sessions)
+- Removed leftover "PRO status" wording from the backup description
+  and an unused empty ad-banner slot left over from the old
+  monetization system
+- Found and fixed 4 more places where the old app name ("Echoes of
+  What Was" / "ECHOES OF WHAT WAS") was still hardcoded -- including
+  inside the Share Highlight Reel feature, which turned out to
+  already exist and work (generates a shareable session-stats image
+  via the native share sheet)
+- Confirmed the EVP Recorder's live waveform + spectrogram were
+  already implemented using real microphone data (no changes needed)
+
+v1.8 -- Camera flash fix
+- The Camera screen's FLASH button now actually turns on the
+  device's real torch/flashlight when the phone/browser supports
+  it (was previously just a cosmetic on/off toggle with no real
+  effect)
+- Falls back to a visual-only indicator with a logged note if the
+  device or browser doesn't expose torch control
+- Torch now automatically turns off when the camera is disabled,
+  so it can't get stuck on in the background
+
+v1.9 -- Real theme system (8 themes)
+- Themes now actually change the app's real background/panel
+  colours everywhere, not just accent highlights like before
+- Added 8 full themes with distinct colour palettes AND restyled
+  buttons/borders per theme: Haunted Hotel, Vampire Castle,
+  Witch's Cottage, Cursed Carnival, Ghost Ship, Victorian Manor,
+  Abandoned Asylum, Zombie Laboratory
+- Each theme has its own button shape/border/press-glow style
+  (e.g. Cursed Carnival buttons jitter on press, Abandoned Asylum
+  buttons flicker like failing fluorescent lights)
+- Settings screen now shows the selected theme's name below the
+  swatches
+- Old flat accent colours (Green, Purple, Red, Cyan, Amber, Pink,
+  Dynamic) still work exactly as before
+- Full design spec for these 8 themes (colour palette, UI style,
+  per-screen art direction, sound ideas) written up in
+  SpectraTalk_Theme_Design_Bible.docx -- 42 more themes are
+  planned/named but not yet designed or built
+
+v1.10 -- Font & text customization
+- New "FONT & TEXT" section in Settings, under the theme picker
+- 6 font family options: Terminal (original), Typewriter, Gothic,
+  Modern, Elegant Serif, Handwritten
+- Text size slider (Small to XX-Large) that scales the whole
+  interface proportionally, not just text
+- Bold text toggle, works with any font family
+- All three (family/size/bold) save automatically and restore
+  next time the app opens
+
+v1.11 -- Themes 9-16
+- Added 8 more full themes: Egyptian Tomb, Werewolf Forest, Hell's
+  Gate, Demon Temple, Gothic Cathedral, Haunted Prison, Pirate
+  Curse, Abandoned Orphanage
+- Same as the first batch: real colour palette per theme plus its
+  own distinct button/border style (e.g. Haunted Prison buttons are
+  hard-edged with a mechanical flash, Abandoned Orphanage stays
+  soft and gentle, Hell's Gate pulses like an ember)
+- 16 of 50 themes now fully designed (in
+  SpectraTalk_Theme_Design_Bible.docx) and built into the app
+- Caught and fixed a structural HTML bug introduced while adding
+  this batch (a duplicated closing tag block) before shipping --
+  verified clean before packaging
+
+v1.12 -- Themes 17-24
+- Added 8 more full themes: Creepy Doll House, Possessed Toy
+  Factory, Medieval Dungeon, Area 51, Alien Mothership, Arctic
+  Research Station, Biohazard Facility, Apocalypse
+- Alien Mothership buttons have a resting bio-luminescent pulse
+  even when not pressed; Arctic Research Station buttons get a
+  frosted-glass blur effect; Area 51 keeps its labels monospace
+  regardless of font choice for a consistent "terminal" feel
+- 24 of 50 themes now fully designed and built into the app
+- Also fixed: Google Play flagged the app for targeting an old
+  Android API level -- needs a fresh PWABuilder repackage (their
+  templates auto-update) with target SDK 36+ before 31 Aug 2026
+
+v1.13 -- Theme lock system
+- All 24 named themes (Haunted Hotel through Apocalypse) are now
+  locked -- shown greyed out with a padlock icon in Settings,
+  tapping one shows "coming soon" instead of switching to it
+- The original 7 free themes (Dynamic, Green, Purple, Red, Cyan,
+  Amber, Pink) are unaffected and work exactly as before
+- To release a theme for real later: open index.html, find that
+  theme's entry in THEME_PRESETS, and change locked:true to
+  locked:false (or delete that part entirely) -- nothing else
+  needs to change
+- No payment/purchase system built yet -- this is just the
+  lock/reveal mechanism. Actual selling (Play Console in-app
+  products, purchase flow, restore purchase) is separate future
+  work whenever you're ready for it
+
+v1.14 -- Themes 25-32
+- Added 8 more full themes: Swamp of the Dead, Voodoo Village,
+  Cursed Mine, Catacombs, Spider Lair, Snake Temple, Haunted
+  Circus, Nightmare Factory -- all locked by default like the
+  rest, same as v1.13's lock system
+- Nightmare Factory buttons have a subtle "warp and snap back"
+  distortion on press instead of a normal highlight, matching its
+  surreal/unsettling design brief
+- 32 of 50 themes now fully designed and built into the app
+- Also flagged: PWABuilder currently has a known bug where it
+  can't yet package apps targeting Android API 36 (Google's new
+  requirement) -- requested a Play Console extension as a
+  stopgap while PWABuilder's developers fix it on their end
+
+v1.15 -- Developer unlock for testing locked themes
+- Tap the theme name label under the theme swatches 7 times
+  (same pattern as Android's own "tap build number 7 times" dev
+  unlock) to toggle full access to every locked theme on that
+  device only
+- This is per-device, stored locally -- doesn't affect testers or
+  anyone else's copy of the app, and doesn't touch the actual
+  locked:true flags in the code
+- Tap it again 7 times to turn dev mode back off (locks
+  everything again for that device)
+- Lets you preview/QA every theme as it's built without waiting
+  for the real purchase system
+
+v1.16 -- Themed nav bar icons
+- The bottom nav bar icons (Home, Box, Cam, Radar, EVP, Grave,
+  Tales, Log, Zodiac) now actually change per theme, not just
+  colours -- e.g. Vampire Castle swaps the skull for a bat,
+  Egyptian Tomb swaps it for a pyramid, Pirate Curse for a skull
+  and crossbones
+- These are real emoji characters (same as the rest of the app
+  already used), not image files -- so this works instantly for
+  every theme with no new art assets needed
+- All 32 built themes have their own custom icon set (2-4 icons
+  changed per theme); unthemed slots quietly fall back to the
+  original default icon
+- Switches automatically when you change themes, including
+  through the developer unlock
+
+v1.17 -- Themes 33-40
+- Added 8 more full themes: Black Forest, Frozen Horror, Haunted
+  Lighthouse, Abandoned Subway, Phantom Train, Sunken City,
+  Atlantis Ruins, Dragon's Crypt -- all locked by default, all
+  with their own nav icon sets too
+- Haunted Lighthouse's button style and Atlantis Ruins' button
+  style both have a resting glow animation (not just on press),
+  matching their "always slightly alive" design brief
+- 40 of 50 themes now fully designed and built into the app
+
+v1.18 -- Themes 41-50: ALL 50 THEMES COMPLETE
+- Added the final 10 themes: Samurai Curse, Ancient Japanese
+  Temple, Haunted Mansion, Steampunk Laboratory, Lovecraft
+  Horror, Shadow Realm, Crystal Caverns, Dark Carnival, Cosmic
+  Horror, and The Final Nightmare
+- Every theme from the original 50-name list is now fully
+  designed (in SpectraTalk_Theme_Design_Bible.docx -- all 950
+  sections filled in) and built into the actual app with its own
+  colours, button style, and nav icon set
+- Shadow Realm buttons are outline-only until pressed, matching
+  its minimal/void design brief; The Final Nightmare (the last
+  theme) cycles through the full colour spectrum on press as a
+  callback to every other theme
+- Confirmed: 57 total themes in the app (7 original free ones +
+  50 named ones), no duplicate IDs, all structurally verified
+  before packaging
+- All 50 named themes are still locked by default (see v1.13) --
+  use the developer 7-tap unlock on the theme name label to
+  preview any of them before deciding which to release for real
+
+v1.19 -- Icons on theme swatches
+- Every theme swatch in Settings now shows its own small icon on
+  top of the colour circle (e.g. Vampire Castle shows a bat,
+  Dragon's Crypt shows a dragon, Cosmic Horror shows a star) --
+  makes it much easier to tell similarly-coloured themes apart
+  at a glance, not just by tapping through them
+- Locked themes still show the padlock instead (icon is hidden
+  until unlocked, so it stays a surprise)
+- The 7 original free themes got simple representative icons too
+  (a palette for Dynamic, coloured circles for the flat colours)
+- All 57 themes (7 free + 50 named) now have a unique icon
+
+v1.20 -- Theme gallery screen
+- New "BROWSE ALL 50 THEMES" button under the theme swatches in
+  Settings opens a full scrollable list instead of the tiny
+  swatch row
+- Each entry shows the theme's colour, icon, name, and a short
+  one-line description, so it's much easier to actually judge
+  57 themes instead of guessing from a small dot
+- Locked themes show a "LOCKED" tag and dimmed styling; tapping
+  one shows a clear "coming soon" message right in the gallery
+  (previously locked-theme feedback only showed on the Settings
+  screen, invisible if you were browsing elsewhere)
+- Tapping an unlocked theme applies it immediately and confirms
+  with a checkmark message
+- Works with the developer 7-tap unlock the same as the swatch
+  row does
+
+v1.21 -- Boot text, categories, search, preview-hold
+- Themed boot screen text: the "STAND BY..." line on the boot
+  screen now shows each theme's own phrase instead (e.g. "The
+  gates are opening..." for Vampire Castle, "Waking the hoard..."
+  for Dragon's Crypt) -- all 50 themes have one, pulled from the
+  design bible
+- Theme gallery is now organised into 7 categories (Your Free
+  Themes, Classic Haunted, Nature & Wilderness, Ancient &
+  Legendary, Industrial & Urban, Carnival & Circus, Supernatural
+  & Sci-Fi) with section headers instead of one long list
+- Added a search box at the top of the gallery -- filters by
+  name or description as you type, across all categories at once
+- NEW: press and hold a locked theme's card for about half a
+  second to preview its real colours live for a few seconds
+  (release early to end it sooner) -- doesn't unlock or save
+  anything, just a peek. A short tap still shows the normal
+  "coming soon" message as before
+- Verified all 57 themes are correctly assigned to a category
+  with no gaps or duplicates before packaging
+
+v1.22 -- Real photos for Haunted Hotel (first fully-illustrated theme!)
+- Haunted Hotel is now the first theme using real photographed
+  background art instead of just flat colours -- Dashboard uses
+  the brass EMF gauge photo, Spirit Box uses the vacuum-tube
+  device photo, Ghost Radar uses the green porthole radar photo,
+  Grave Records uses the estate & cemetery map illustration, and
+  Camera/EVP/Stories/Log/Zodiac share the moody hotel hallway
+  photo -- each with a dark gradient overlay so text stays
+  readable
+- Nav bar icons for Haunted Hotel are now real cropped photos
+  too: a gold tombstone (Home), the vacuum-tube spirit box
+  (Box), the brass field camera (Cam), a radar porthole (Radar),
+  the phantom recorder (EVP), an ornate key (Grave), an open
+  storybook (Tales), the guest ledger book cover (Log), and a
+  cropped astrolabe/compass emblem (Zodiac)
+- Built a general system for this (IMAGE_NAV_ICON_SETS) so future
+  themes can get real photo icons too, not just Haunted Hotel
+- All assets processed and compressed to a reasonable ~1.4MB
+  total for this one theme (backgrounds resized to 1400px,
+  icons cropped to 160x160)
+- Confirmed structure clean (balanced tags/braces) before
+  packaging, learned from an earlier near-miss with a duplicated
+  closing tag
+
+v1.23 -- Layout archetypes (themes feel structurally different, not just recoloured)
+- New system so themes can change actual layout, not just
+  colours/icons/backgrounds: card shapes, spacing, header style,
+  border style
+- Two archetypes built so far:
+  - "Ornate & Framed" -- tighter double-bordered cards, less
+    gap between them, bold letter-spaced headers, formal feel.
+    Applied to: Haunted Hotel, Vampire Castle, Victorian Manor,
+    Gothic Cathedral, Haunted Mansion
+  - "Minimal & Spacious" -- outline-only transparent cards, much
+    more breathing room between everything, wide airy
+    letter-spacing, sparse feel. Applied to: Shadow Realm,
+    Crystal Caverns, Atlantis Ruins, Lovecraft Horror, Cosmic
+    Horror
+- Works with the tap-hold preview in the gallery too, so you can
+  feel the layout difference even on locked themes
+- The other 40 themes are unaffected for now (still colour/icon
+  only) -- this was step one to prove the system works before
+  deciding how far to take it further
+
+v1.24 -- Two more layout archetypes, full assignment, ambient sound, particle effects
+- Two new layout archetypes built, joining the original two:
+  - "Dense & Industrial" -- cramped, sharp-cornered, utilitarian
+    cards, minimal gaps, uppercase headers. Fits labs, factories,
+    facilities, prisons.
+  - "Radial & Circular" -- rounded pill-shaped cards, generous
+    curves, ritual-circle dot markers on section headers. Fits
+    ritual/ceremonial/orbit themes.
+- ALL 50 named themes now have a layout archetype assigned (was
+  only 10 before) -- roughly 12-13 themes per archetype, verified
+  no theme missed
+- NEW: Ambient theme sound -- each archetype now has its own
+  soft, synthesized background audio (no sound files, generated
+  live): Ornate = warm breathing hum, Minimal = deep vast drone,
+  Dense = mechanical rumble with a noise texture, Radial = a
+  slow rhythmic pulse. New toggle in Settings ("Ambient Theme
+  Sound") to turn it off entirely; works through the tap-hold
+  preview too
+- NEW: Background particle effects -- each archetype now has its
+  own drifting particle animation over the whole screen: Ornate =
+  rising embers, Minimal = twinkling sparkles, Dense = drifting
+  smoke, Radial = slow rolling fog. New toggle in Settings
+  ("Background Particle Effects") to turn it off; also respects
+  the tap-hold preview
+- Both new systems are tied to the same 4 archetypes as the
+  layout system, so sound + particles + layout + colour all
+  change together as one cohesive package per theme
+- The 7 free flat themes are untouched by all of this (no
+  archetype, no sound, no particles) -- kept simple as before
+- Verified no duplicate function declarations and confirmed all
+  50 named themes have exactly one archetype assigned before
+  packaging
+
+v1.25 -- Real icons for Ghost Ship, Cursed Carnival, Vampire Castle
+- Ghost Ship: nav icons now use the real wheel & anchor emblem
+  (Home) and life preserver (Grave)
+- Cursed Carnival: nav icons now use the real jester face
+  (cropped from the boot emblem, Home) and the ticket-shaped
+  ferris wheel (Grave); ALSO got a real photo background across
+  every screen -- a frozen fairground scene (cropped from a
+  supplied mockup that had fake UI baked into its bottom half;
+  kept only the clean top portion)
+- Vampire Castle: nav icon now uses the real bat & castle emblem
+  (Home), cropped to exclude the text ribbon since it wouldn't
+  be legible at icon size anyway
+- Two of the three themes (Ghost Ship, Vampire Castle) still
+  don't have real backgrounds -- the supplied mockups for those
+  had fake gauges/readouts drawn directly into the image, which
+  can't be used behind real live data. Still need clean full-scene
+  shots with no fake UI for those two if you want the full
+  Haunted-Hotel-style treatment
+- Two decorative button graphics (a "START SCAN" ticket button for
+  Cursed Carnival, a velvet "ENTER" button for Vampire Castle)
+  were supplied but not wired in -- our button system currently
+  styles via CSS, not swapped images; flagged as possible future
+  work if wanted
+
+==================================
+NEXT VERSION (fill in before your next release):
+
+v____ -- ____________________
+-
+-
+-
